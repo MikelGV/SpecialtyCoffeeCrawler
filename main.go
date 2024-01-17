@@ -1,9 +1,10 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"net/http"
 	"sync"
-    "net/http"
 )
 
 type Fetcher interface {
@@ -55,13 +56,31 @@ func main() {
 }
 
 // TODO: build a fetcher that returns http results
+type fakeFetcher map[string]*fakeResult
 
-func Fetch(url string) (string, []string, error) {
+type fakeResult struct {
+    body string
+    urls []string
+}
+
+func (f fakeFetcher) Fetch(url string) (string, []string, error){
     res, err := http.Get(url)
+
     if err != nil {
         panic(err)
     }
     defer res.Body.Close()
+
+    scanner := bufio.NewScanner(res.Body)
+    for i := 0; scanner.Scan() && i < 10; i++ {
+        fmt.Println(scanner.Text())
+    }
+
+    if err := scanner.Err(); err != nil {
+        panic(err)
+    }
+    return "", nil, fmt.Errorf("not fount: %s", url)
 }
 
+var fetcher = fakeFetcher{}
 
