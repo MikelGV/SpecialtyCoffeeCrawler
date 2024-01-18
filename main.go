@@ -72,7 +72,9 @@ func (f fakeFetcher) Fetch(url string) (string, []string, error){
     defer res.Body.Close()
 
     scanner := bufio.NewScanner(res.Body)
-    for i := 0; scanner.Scan() && i < 10; i++ {
+    buf := make([]byte, 0, 64*1024)
+    scanner.Buffer(buf, 1024*1024)
+    for scanner.Scan() {
         fmt.Println(scanner.Text())
     }
 
