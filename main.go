@@ -51,7 +51,7 @@ func Crawl(url string, depth int, fetcher Fetcher) {
 
 func main() {
     c.wg.Add(1)
-    Crawl("https://www.reddit.com/", 4, fetcher)
+    Crawl("https://thecoffeestore.ie/collections/coffee", 4, fetcher)
     c.wg.Wait()
 }
 
