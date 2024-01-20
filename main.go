@@ -30,6 +30,12 @@ func (s SafeCounter) checkvisited(url string) bool {
     return true
 }
 
+type urlMap map[string]*urlMaps
+
+type urlMaps struct {
+    url []string
+}
+
 func Crawl(url string, depth int, fetcher Fetcher) {
     defer c.wg.Done()
     if depth <=0 {
@@ -55,7 +61,6 @@ func main() {
     c.wg.Wait()
 }
 
-// TODO: build a fetcher that returns http results
 type fakeFetcher map[string]*fakeResult
 
 type fakeResult struct {
