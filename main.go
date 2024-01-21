@@ -79,13 +79,22 @@ func (f fakeFetcher) Fetch(url string) (string, []string, error){
     scanner := bufio.NewScanner(res.Body)
     buf := make([]byte, 0, 64*1024)
     scanner.Buffer(buf, 1024*1024)
+
+    // TODO: LOOP INSIDE THE SCANNED TEXT AND SAVE THE PRODUCT INFO INTO A JSON FILE.
+    scanner.Split(bufio.ScanLines)
+    var text []string
     for scanner.Scan() {
-        fmt.Println(scanner.Text())
+        text = append(text, scanner.Text())
     }
 
     if err := scanner.Err(); err != nil {
         panic(err)
     }
+
+    for _, eachln := range text {
+        fmt.Println(eachln)
+    }
+
     return "", nil, fmt.Errorf("not fount: %s", url)
 }
 
