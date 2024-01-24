@@ -21,14 +21,14 @@ func main() {
     c.SetRequestTimeout(120 * time.Second)
     products := make([]Product, 0)
 
-    // TODO: make it scrape different divs
+    // TODO: take the image
     c.OnHTML("div.product-loop", func(h *colly.HTMLElement) {
         h.ForEach("div.product-index", func(i int, h *colly.HTMLElement) {
             item := Product{}
-            item.Name = h.Text
-            item.Img = h.ChildAttr("div.ci", "a")
-            item.Price = h.Attr("prod-price")
-            item.Url = "https://thecoffeestore.ie/collections/coffee/products" + h.Attr("href")
+            item.Img = h.ChildAttr("div.ci > a > div.reveal > div.box-ratio > img", "srcset")
+            item.Url = "https://thecoffeestore.ie" + h.ChildAttr("div.ci > a", "href")
+            item.Name = h.ChildText("a > h3")
+            item.Price = h.ChildText("div.price > div.prod-price")
             products = append(products, item)
         })
     })
