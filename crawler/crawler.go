@@ -25,7 +25,7 @@ func main() {
     c.OnHTML("div.product-loop", func(h *colly.HTMLElement) {
         h.ForEach("div.product-index", func(i int, h *colly.HTMLElement) {
             item := Product{}
-            item.Img = h.ChildAttr("div.ci > a > div.reveal > div.box-ratio > img", "srcset")
+            item.Img = h.ChildAttr("div.ci > a > div > div > img", "data-srcset")
             item.Url = "https://thecoffeestore.ie" + h.ChildAttr("div.ci > a", "href")
             item.Name = h.ChildText("a > h3")
             item.Price = h.ChildText("div.price > div.prod-price")
