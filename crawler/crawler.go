@@ -22,13 +22,13 @@ func main() {
     products := make([]Product, 0)
 
     // TODO: take the image
-    c.OnHTML("div.product-loop", func(h *colly.HTMLElement) {
-        h.ForEach("div.product-index", func(i int, h *colly.HTMLElement) {
+    c.OnHTML("div.product-grid", func(h *colly.HTMLElement) {
+        h.ForEach("div.product-item", func(i int, h *colly.HTMLElement) {
             item := Product{}
-            item.Img = h.ChildAttr("div.ci > a > div > div > img", "data-srcset")
-            item.Url = "https://thecoffeestore.ie" + h.ChildAttr("div.ci > a", "href")
-            item.Name = h.ChildText("a > h3")
-            item.Price = h.ChildText("div.price > div.prod-price")
+            item.Img = h.ChildAttr("a > div > div", "data-bgset")
+            item.Url = "https://www.fiveelephant.com" + h.ChildAttr("a", "href")
+            item.Name = h.ChildAttr("a", "aria-label")
+            item.Price = h.ChildText("a > div.product-information > span")
             products = append(products, item)
         })
     })
@@ -60,5 +60,5 @@ func main() {
 
     })
 
-    c.Visit("https://thecoffeestore.ie/collections/coffee")
+    c.Visit("https://www.fiveelephant.com/collections/coffee")
 }
