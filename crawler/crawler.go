@@ -40,10 +40,13 @@ func main() {
     })
     
     c.OnHTML("div.container", func(h *colly.HTMLElement) {
-        h.ForEach("div.row", func(i int, h *colly.HTMLElement) {
+        h.ForEach("div.row > div.col-sm-6 > div.card", func(i int, h *colly.HTMLElement) {
             item := Product{}
 
-            item.Url = h.ChildText("div.col-sm-6")
+            item.Img = h.ChildAttr("a > img", "src")
+            item.Url = "https://ariosacoffee.com" +  h.ChildAttr("a", "href")
+            item.Name = h.ChildText("div > a > div")
+            item.Price = h.ChildText("div > div > div.price")
             products = append(products, item)
         })
     })
