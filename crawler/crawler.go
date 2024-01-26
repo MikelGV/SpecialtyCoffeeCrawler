@@ -21,13 +21,14 @@ func main() {
     urls := []string{
         "https://ariosacoffee.com/collections/coffee",
         "https://www.fiveelephant.com/collections/coffee",
+        "https://thebarn.de/collections/coffee-beans",
     }
 
     c := colly.NewCollector()
     c.SetRequestTimeout(120 * time.Second)
     products := make([]Product, 0)
 
-    // TODO: Look if the url used is fiveelephant or ariosacoffe
+    // Taking FiveElephants data
     c.OnHTML("div.product-grid", func(h *colly.HTMLElement) {
         h.ForEach("div.product-item", func(i int, h *colly.HTMLElement) {
             item := Product{}
@@ -39,6 +40,7 @@ func main() {
         })
     })
     
+    // Taking ariosacoffee data
     c.OnHTML("div.container", func(h *colly.HTMLElement) {
         h.ForEach("div.row > div.col-sm-6 > div.card", func(i int, h *colly.HTMLElement) {
             item := Product{}
@@ -47,6 +49,18 @@ func main() {
             item.Url = "https://ariosacoffee.com" +  h.ChildAttr("a", "href")
             item.Name = h.ChildText("div > a > div")
             item.Price = h.ChildText("div > div > div.price")
+            products = append(products, item)
+        })
+    })
+
+    // Taking The Barn data
+    c.OnHTML("div.collection", func(h *colly.HTMLElement) {
+        h.ForEach("ul.product-grid > li.grid__item > div.card-wrapper > div.card", func(i int, h *colly.HTMLElement) {
+            item := Product{} 
+
+            item.Url = "https://thebarn.de" + h.ChildAttr("a", "href")
+            item.Name = h.ChildText("div.card__information > h3.card__heading > a")
+            item.Price = h.ChildText("div > div > div.price > div.price__container > div.price__regular > span.price-item")
             products = append(products, item)
         })
     })
