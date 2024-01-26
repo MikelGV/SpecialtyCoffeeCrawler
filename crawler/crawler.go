@@ -17,11 +17,17 @@ type Product struct {
 }
 
 func main() {
+
+    urls := []string{
+        "https://ariosacoffee.com/collections/coffee",
+        "https://www.fiveelephant.com/collections/coffee",
+    }
+
     c := colly.NewCollector()
     c.SetRequestTimeout(120 * time.Second)
     products := make([]Product, 0)
 
-    // TODO: take the image
+    // TODO: Look if the url used is fiveelephant or ariosacoffe
     c.OnHTML("div.product-grid", func(h *colly.HTMLElement) {
         h.ForEach("div.product-item", func(i int, h *colly.HTMLElement) {
             item := Product{}
@@ -29,6 +35,15 @@ func main() {
             item.Url = "https://www.fiveelephant.com" + h.ChildAttr("a", "href")
             item.Name = h.ChildAttr("a", "aria-label")
             item.Price = h.ChildText("a > div.product-information > span")
+            products = append(products, item)
+        })
+    })
+    
+    c.OnHTML("div.container", func(h *colly.HTMLElement) {
+        h.ForEach("div.row", func(i int, h *colly.HTMLElement) {
+            item := Product{}
+
+            item.Url = h.ChildText("div.col-sm-6")
             products = append(products, item)
         })
     })
@@ -60,5 +75,8 @@ func main() {
 
     })
 
-    c.Visit("https://www.fiveelephant.com/collections/coffee")
+    for _, url := range urls {
+        c.Visit(url)
+    }
+//    c.Visit("https://www.fiveelephant.com/collections/coffee")
 }
