@@ -21,7 +21,7 @@ func main() {
     urls := []string{
         "https://ariosacoffee.com/collections/coffee",
         "https://www.fiveelephant.com/collections/coffee",
-        "https://thebarn.de/collections/coffee-beans",
+        "https://nomadcoffee.es/collections/coffee",
     }
 
     c := colly.NewCollector()
@@ -53,14 +53,15 @@ func main() {
         })
     })
 
-    // Taking The Barn data
-    c.OnHTML("div.collection", func(h *colly.HTMLElement) {
-        h.ForEach("ul.product-grid > li.grid__item > div.card-wrapper > div.card", func(i int, h *colly.HTMLElement) {
+    // Taking The NomadCoffee data
+    c.OnHTML("div.grid", func(h *colly.HTMLElement) {
+        h.ForEach("div.productItem", func(i int, h *colly.HTMLElement) {
             item := Product{} 
 
-            item.Url = "https://thebarn.de" + h.ChildAttr("a", "href")
-            item.Name = h.ChildText("div.card__information > h3.card__heading > a")
-            item.Price = h.ChildText("div > div > div.price > div.price__container > div.price__regular > span.price-item")
+            item.Url = "https://nomadcoffee.es" + h.ChildAttr("a", "href")
+            item.Img = h.ChildAttr("a > ul > li > img", "src")
+            item.Name = h.ChildText("div.border-t > div.flex > span > h3")
+            item.Price = h.ChildText("div.border-black > div.text-right > div > span.text-right")
             products = append(products, item)
         })
     })
