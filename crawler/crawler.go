@@ -32,6 +32,13 @@ func main() {
     }
 
     defer storage.Close()
+    
+    err := c.SetStorage(storage)
+    if err != nil {
+        panic(err)
+    }
+
+
     products := make([]Product, 0)
 
     // Taking FiveElephants data
