@@ -27,6 +27,7 @@ func main() {
 
     c := colly.NewCollector()
     c.SetRequestTimeout(120 * time.Second)
+
     storage := &sqlite3.Storage{
         Filename: "./products.db",
     }
@@ -35,7 +36,6 @@ func main() {
     
     err := c.SetStorage(storage)
     if err != nil {
-
         log.Fatal(err)
     }
 
