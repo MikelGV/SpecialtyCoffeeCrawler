@@ -8,7 +8,6 @@ import (
 	"time"
 
 	"github.com/gocolly/colly"
-    "github.com/velebak/colly-sqlite3-storage/colly/sqlite3"
 )
 type Product struct {
    Name string
@@ -27,18 +26,6 @@ func main() {
 
     c := colly.NewCollector()
     c.SetRequestTimeout(120 * time.Second)
-
-    storage := &sqlite3.Storage{
-        Filename: "./products.db",
-    }
-
-    defer storage.Close()
-    
-    err := c.SetStorage(storage)
-    if err != nil {
-        log.Fatal(err)
-    }
-
 
     products := make([]Product, 0)
 
