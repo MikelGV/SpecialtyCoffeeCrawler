@@ -1,4 +1,4 @@
-package main
+package crawler
 
 import (
 	"encoding/json"
@@ -16,7 +16,7 @@ type Product struct {
    Url string
 }
 
-func main() {
+func crawler() {
 
     urls := []string{
         "https://ariosacoffee.com/collections/coffee",
