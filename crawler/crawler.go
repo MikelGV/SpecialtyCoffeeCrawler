@@ -16,7 +16,7 @@ type Product struct {
    Url string
 }
 
-func crawler() {
+func Crawl() {
 
     urls := []string{
         "https://ariosacoffee.com/collections/coffee",
@@ -40,7 +40,7 @@ func crawler() {
             products = append(products, item)
         })
     })
-    
+
     // Taking ariosacoffee data
     c.OnHTML("div.container", func(h *colly.HTMLElement) {
         h.ForEach("div.row > div.col-sm-6 > div.card", func(i int, h *colly.HTMLElement) {
@@ -87,7 +87,7 @@ func crawler() {
         if err != nil {
             log.Fatal(err)
         }
-        
+
         if err := os.WriteFile("products.json", js, 0664); err == nil {
             fmt.Println("Data written to file successfully")
         }
@@ -97,5 +97,9 @@ func crawler() {
     for _, url := range urls {
         c.Visit(url)
     }
+}
+
+func crawler() {
+    Crawl()
 //    c.Visit("https://www.fiveelephant.com/collections/coffee")
 }
