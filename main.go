@@ -4,11 +4,18 @@ import (
 	"fmt"
 
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/crawler"
+    "github.com/gin-gonic/gin"
 )
 
 func main() {
+    r := gin.Default()
 
-    crawler.Crawl()
-    fmt.Println("hello world")
+    r.GET("/crawl", func(ctx *gin.Context) {
+        crawler.Crawl()
+        fmt.Println("hello world")
+        ctx.JSON(200, gin.H{
+        })
+    })
+    r.Run()
     
 }
