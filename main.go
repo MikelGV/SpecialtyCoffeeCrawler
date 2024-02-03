@@ -17,6 +17,6 @@ func main() {
             "msg": "this worked",
         })
     })
-    r.Run()
+    r.Run("localhost:8080")
     
 }
