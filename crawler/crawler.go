@@ -10,7 +10,6 @@ import (
 	"github.com/gocolly/colly"
 )
 type Product struct {
-    Id int `json:"id"`
     Name string `json:"name"`
     Img string `json:"img"`
     Price string `json:"price"`
