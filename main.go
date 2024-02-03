@@ -10,7 +10,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 type Data struct {
-    Id int
     Name string
     Img string
     Price string
