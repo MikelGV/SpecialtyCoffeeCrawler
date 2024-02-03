@@ -14,6 +14,7 @@ func main() {
         crawler.Crawl()
         fmt.Println("hello world")
         ctx.JSON(200, gin.H{
+            "msg": "this worked",
         })
     })
     r.Run()

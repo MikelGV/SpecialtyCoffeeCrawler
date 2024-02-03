@@ -10,10 +10,12 @@ import (
 	"github.com/gocolly/colly"
 )
 type Product struct {
-   Name string
-   Img string
-   Price string
-   Url string
+    Id int `json:"id"`
+    Name string `json:"name"`
+    Img string `json:"img"`
+    Price string `json:"price"`
+    Url string `json:"url"`
+
 }
 
 func Crawl() {
