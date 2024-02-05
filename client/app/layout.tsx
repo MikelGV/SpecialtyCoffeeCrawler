@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Specialty Coffee Crawler",
-  description: "Made by MikelGV",
+  title: "Specialty Coffee",
+  description: "Search online specialty coffee shops in Europe",
 };
 
 export default function RootLayout({
