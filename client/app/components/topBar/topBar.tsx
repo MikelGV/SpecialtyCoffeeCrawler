@@ -1,13 +1,13 @@
 
 export default function TopBar() {
     return (
-        <div>
-            <div className="flex-col bg-yellow-950 p-0.5"></div>
-            <div className="flex-row bg-green-950 p-3 rounded-b-xl">
-                <div id="left" className="flex-col">     
+        <div className="flex-col">
+            <div className="bg-yellow-950 p-0.5"></div>
+            <div className="flex bg-green-950 p-5 rounded-b-xl">
+                <div id="left" className="flex-1">     
                     <h1 className="">Home</h1>
                 </div>
-                <div id="right" className="flex-col">
+                <div id="right" className="">
                     <h1 className="">Products</h1>
                 </div>
             </div>
