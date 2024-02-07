@@ -24,6 +24,9 @@ const config: Config = {
                 950: '#283D5F'
             },
         },
+        fontFamily: {
+            pacifico: ["Pacifico", "sans-serif"],
+        },
     },
   },
   plugins: [],
