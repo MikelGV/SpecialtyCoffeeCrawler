@@ -1,5 +1,9 @@
+import Layout from "../components/layout/layout";
+
 export default function Products() {
     return (
-        <div>This is product Page</div>
+        <Layout>
+            <div>This is product Page</div>
+        </Layout>
     )
 }

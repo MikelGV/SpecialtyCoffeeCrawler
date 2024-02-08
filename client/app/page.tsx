@@ -1,12 +1,12 @@
-import TopBar from "./components/topBar/topBar";
-import Footer from "./components/footer/footer";
+import Layout from "./components/layout/layout";
 import HomeS from "./home/home";
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col justify-between">
-        <TopBar/>
-        <HomeS/>
-        <Footer/>
-    </main>
+
+      <Layout>
+        <main className="flex min-h-screen flex-col justify-between">
+            <HomeS/>
+        </main>
+      </Layout> 
   );
 }
