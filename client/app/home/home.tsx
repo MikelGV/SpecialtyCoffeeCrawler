@@ -5,7 +5,7 @@ export default function HomeS() {
     return (
 
         <div>
-            <div className="flex justify-center m-56 mb-44">
+            <div className="flex justify-center m-56 mb-64">
                 <h1 className="text-black font-pacifico text-6xl">Specialty Coffee Europe</h1>
             </div>
             <div className="flex justify-center">
@@ -13,7 +13,10 @@ export default function HomeS() {
                     <PlayIcon className="text-blue-950 w-40 h-40 rotate-90"/>
                 </Link>
             </div>
-            <div id="companies" className="flex justify-center">here goes crawled companies</div>
+            <div id="companies" className="flex justify-center m-48 font-pacifico">
+                <h1 className="text-black text-2xl">Coffee Shops Crawled:</h1>
+                <div className="flex-col">test</div>
+            </div>
         </div>
     )
 }
