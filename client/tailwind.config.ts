@@ -19,6 +19,7 @@ const config: Config = {
             },
             green: {
                 950: '#90843C',
+                955: '#95893e',
             },
             blue : {
                 950: '#283D5F'
