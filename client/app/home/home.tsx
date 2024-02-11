@@ -19,14 +19,24 @@ export default function HomeS() {
                 </div>
                 <div className="flex justify-center text-black">
                     <div id="nomad" className="flex-1">
-                        <div className="flex justify-center bg-white h-48 w-72">
+                        <div className="flex justify-center h-48 w-72">
                             <div className="mt-20">
-                                <h1 className="font-grotesque font-semibold h-5 w-15">NOMAD Coffee</h1>
+                                <Link href="https://nomadcoffee.es/en" target="_blank" className="font-grotesque text-3xl font-semibold h-5 w-15">NOMAD Coffee</Link>
                             </div>
                         </div>
                     </div>
-                    <div className="flex-auto">Product2</div>
-                    <div className="flex">Product3</div>
+                    <div className="flex-auto h-48 w-72">
+                        <div className="flex -justify-center">
+                            <Link href="https://www.fiveelephant.com/" target="_blank">
+                                <img src="https://www.fiveelephant.com/cdn/shop/files/01_5el_logo_cmyk_transperant-01_400x.png?v=1614295937"/>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="flex">
+                        <Link href="https://ariosacoffee.com/" target="_blank">
+                            <img src="https://ariosacoffee.com/cdn/shop/t/5/assets/logo.svg?v=83156499127083417791689682072"/>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
