@@ -26,6 +26,7 @@ const config: Config = {
         },
         fontFamily: {
             pacifico: ["Pacifico", "sans-serif"],
+            grotesque: ["Grotesque", "sans-serif"],
         },
     },
   },
