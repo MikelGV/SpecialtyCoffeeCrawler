@@ -19,8 +19,8 @@ export default function HomeS() {
                 </div>
                 <div className="flex justify-center text-black">
                     <div className="flex-1">Product1</div>
-                    <div className="flex-1">Product2</div>
-                    <div className="flex-1">Product3</div>
+                    <div className="flex-auto">Product2</div>
+                    <div className="flex">Product3</div>
                 </div>
             </div>
         </div>
