@@ -1,16 +1,16 @@
 import Link from "next/link";
 
-export default function Product() {
+export default function Product({ item }) {
     return (
         <div id="container" className="">
             <div id="imgContainer" className="">
-                <Link href="">
-                     <img className="" src=""/>
+                <Link href={item.url}>
+                     <img className="" src={item.img}/>
                 </Link>
             </div>
             <div id="infoContainer" className="">
-                <h1 className=""></h1>
-                <p className=""></p>
+                <h1 className="">{item.name}</h1>
+                <p className="">{item.price}</p>
             </div>
         </div>
     )
