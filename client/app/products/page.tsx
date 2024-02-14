@@ -1,7 +1,7 @@
 import Layout from "../components/layout/layout";
 
 async function getData() {
-    const res = await fetch('localhost:8080/products')
+    const res = await fetch('http://localhost:8080/products')
 
     if (!res.ok) {
         throw new Error('Failed to fetch data')
@@ -15,7 +15,9 @@ export default async function Products() {
 
     return (
         <Layout>
-            <div>This is product Page {data}</div>
+            <div className="h-48 w-48">
+                <h1 className="text-black">{data.name}</h1>
+            </div>
         </Layout>
     )
 }
