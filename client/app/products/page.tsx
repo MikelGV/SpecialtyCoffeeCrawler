@@ -7,7 +7,8 @@ async function getData() {
         throw new Error('Failed to fetch data')
     }
 
-    return res.json()
+    const data = await res.json()
+    return data;
 }
 
 export default async function Products() {
@@ -16,7 +17,7 @@ export default async function Products() {
     return (
         <Layout>
             <div className="h-48 w-48">
-                <h1 className="text-black">{data.name}</h1>
+                <h1 className="text-black">{data}</h1>
             </div>
         </Layout>
     )
