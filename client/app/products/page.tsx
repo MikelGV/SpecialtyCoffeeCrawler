@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Layout from "../components/layout/layout";
 
 async function getData() {
@@ -12,14 +13,40 @@ async function getData() {
 }
 
 export default async function Products() {
-    const data = await getData()
-    console.log(data)
-    
+    const Products = await getData()
+    console.log(Products)
 
     return (
         <Layout>
-            <div className="h-48 w-48">
-                <h1 className="text-black">{data.name}</h1>
+            <div className="grid grid-cols-3 gap-1 justify-evenly ml-64 mt-32">
+                   {
+                Products
+
+                    ?
+                    Products.map((p: any) => {
+                        return (
+                            <>
+                                <div id="products" className="">
+                                    <div id="imgContainer" className="">
+                                        <Link href={p.Url} target="_blank">
+                                            <img className="h-44 w-48" src={p.Img} />
+                                        </Link>
+                                    </div>
+                                    <div id="infoContainer" className="text-black">
+                                        <h1 className="">{p.Name}</h1>
+                                        <p className="">{p.Price}</p>
+                                    </div>
+                                </div>
+                            </>
+                        )
+                    })
+                    :
+
+                    "Getting Products ...."
+
+
+                // THIS LOADING STATE WILL NOT BE VISIBLE BECAUSE SERVER LOADS THIS WHOLE PAGE
+            }
             </div>
         </Layout>
     )
