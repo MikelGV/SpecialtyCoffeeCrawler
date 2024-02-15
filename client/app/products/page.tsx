@@ -13,11 +13,13 @@ async function getData() {
 
 export default async function Products() {
     const data = await getData()
+    console.log(data)
+    
 
     return (
         <Layout>
             <div className="h-48 w-48">
-                <h1 className="text-black">{data}</h1>
+                <h1 className="text-black">{data.name}</h1>
             </div>
         </Layout>
     )
