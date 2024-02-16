@@ -30,12 +30,6 @@
   "url": "https://ariosacoffee.com/collections/coffee/products/ethiopia-dari"
  },
  {
-  "name": "El Salvador Finca Los Angeles",
-  "img": "//ariosacoffee.com/cdn/shop/files/El-Salvador-Finca-Los-Angeles_800x800_crop_center.png?v=1706127495",
-  "price": "€10",
-  "url": "https://ariosacoffee.com/collections/coffee/products/el-salvador-finca-los-angeles"
- },
- {
   "name": "Espresso Blend",
   "img": "//ariosacoffee.com/cdn/shop/files/Espresso-Ariosa-Coffee_800x800_crop_center.png?v=1706126360",
   "price": "€9",
@@ -108,27 +102,33 @@
   "url": "https://www.fiveelephant.com/collections/coffee/products/monthly-subscription"
  },
  {
-  "name": "COLOMBIA Las Margaritas - Premium Filter Coffee",
-  "img": "//www.fiveelephant.com/cdn/shop/files/DSC06209-Bearbeitet_180x.jpg?v=1683643507 180w 120h,\n    //www.fiveelephant.com/cdn/shop/files/DSC06209-Bearbeitet_360x.jpg?v=1683643507 360w 240h,\n    //www.fiveelephant.com/cdn/shop/files/DSC06209-Bearbeitet_540x.jpg?v=1683643507 540w 360h,\n    //www.fiveelephant.com/cdn/shop/files/DSC06209-Bearbeitet_720x.jpg?v=1683643507 720w 480h,\n    //www.fiveelephant.com/cdn/shop/files/DSC06209-Bearbeitet_900x.jpg?v=1683643507 900w 600h,\n    //www.fiveelephant.com/cdn/shop/files/DSC06209-Bearbeitet_1080x.jpg?v=1683643507 1080w 721h,\n    //www.fiveelephant.com/cdn/shop/files/DSC06209-Bearbeitet_1296x.jpg?v=1683643507 1296w 865h,\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    //www.fiveelephant.com/cdn/shop/files/DSC06209-Bearbeitet.jpg?v=1683643507 1400w 934h",
-  "price": "Sold Out",
-  "url": "https://www.fiveelephant.com/collections/coffee/products/meridian"
- },
- {
   "name": "RWANDA Rugali – Filter",
   "img": "//www.fiveelephant.com/cdn/shop/files/Five_Elephant_Rugali_180x.jpg?v=1704893578 180w 180h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Rugali_360x.jpg?v=1704893578 360w 360h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Rugali_540x.jpg?v=1704893578 540w 540h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Rugali_720x.jpg?v=1704893578 720w 720h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Rugali_900x.jpg?v=1704893578 900w 900h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Rugali_1080x.jpg?v=1704893578 1080w 1080h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Rugali_1296x.jpg?v=1704893578 1296w 1296h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Rugali_1512x.jpg?v=1704893578 1512w 1512h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Rugali_1728x.jpg?v=1704893578 1728w 1728h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Rugali_1950x.jpg?v=1704893578 1950w 1950h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Rugali_2100x.jpg?v=1704893578 2100w 2100h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Rugali_2260x.jpg?v=1704893578 2260w 2260h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Rugali_2450x.jpg?v=1704893578 2450w 2450h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Rugali_2700x.jpg?v=1704893578 2700w 2700h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Rugali_3000x.jpg?v=1704893578 3000w 3000h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Rugali_3350x.jpg?v=1704893578 3350w 3350h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Rugali_3750x.jpg?v=1704893578 3750w 3750h,\n    \n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Rugali.jpg?v=1704893578 4000w 4000h",
   "price": "From €16.90",
   "url": "https://www.fiveelephant.com/collections/coffee/products/rwanda-rugali-filter"
  },
  {
+  "name": "KENYA Nandi Hills – Espresso",
+  "img": "//www.fiveelephant.com/cdn/shop/products/Five_Elephant_Nandi_Hills_Espresso_180x.jpg?v=1681303449 180w 180h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Nandi_Hills_Espresso_360x.jpg?v=1681303449 360w 360h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Nandi_Hills_Espresso_540x.jpg?v=1681303449 540w 540h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Nandi_Hills_Espresso_720x.jpg?v=1681303449 720w 720h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Nandi_Hills_Espresso_900x.jpg?v=1681303449 900w 900h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Nandi_Hills_Espresso_1080x.jpg?v=1681303449 1080w 1080h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Nandi_Hills_Espresso_1296x.jpg?v=1681303449 1296w 1296h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Nandi_Hills_Espresso_1512x.jpg?v=1681303449 1512w 1512h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Nandi_Hills_Espresso_1728x.jpg?v=1681303449 1728w 1728h,\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Nandi_Hills_Espresso.jpg?v=1681303449 1731w 1731h",
+  "price": "From €16.90",
+  "url": "https://www.fiveelephant.com/collections/coffee/products/kenya-nandi-hills-espresso"
+ },
+ {
   "name": "BRAZIL Sitio Canaã Sumatra – Filter Coffee",
   "img": "//www.fiveelephant.com/cdn/shop/files/Five_Elephant_Sitio_Canaa_Sumatra_Filter_180x.jpg?v=1700048393 180w 180h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Sitio_Canaa_Sumatra_Filter_360x.jpg?v=1700048393 360w 360h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Sitio_Canaa_Sumatra_Filter_540x.jpg?v=1700048393 540w 540h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Sitio_Canaa_Sumatra_Filter_720x.jpg?v=1700048393 720w 720h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Sitio_Canaa_Sumatra_Filter_900x.jpg?v=1700048393 900w 900h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Sitio_Canaa_Sumatra_Filter_1080x.jpg?v=1700048393 1080w 1080h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Sitio_Canaa_Sumatra_Filter_1296x.jpg?v=1700048393 1296w 1296h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Sitio_Canaa_Sumatra_Filter_1512x.jpg?v=1700048393 1512w 1512h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Sitio_Canaa_Sumatra_Filter_1728x.jpg?v=1700048393 1728w 1728h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Sitio_Canaa_Sumatra_Filter_1950x.jpg?v=1700048393 1950w 1950h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Sitio_Canaa_Sumatra_Filter_2100x.jpg?v=1700048393 2100w 2100h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Sitio_Canaa_Sumatra_Filter_2260x.jpg?v=1700048393 2260w 2260h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Sitio_Canaa_Sumatra_Filter_2450x.jpg?v=1700048393 2450w 2450h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Sitio_Canaa_Sumatra_Filter_2700x.jpg?v=1700048393 2700w 2700h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Sitio_Canaa_Sumatra_Filter_3000x.jpg?v=1700048393 3000w 3000h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Sitio_Canaa_Sumatra_Filter_3350x.jpg?v=1700048393 3350w 3350h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Sitio_Canaa_Sumatra_Filter_3750x.jpg?v=1700048393 3750w 3750h,\n    \n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Sitio_Canaa_Sumatra_Filter.jpg?v=1700048393 4000w 4000h",
-  "price": "From €17.90",
+  "price": "From €17.79",
   "url": "https://www.fiveelephant.com/collections/coffee/products/brazil-sitio-canaa-sumatra-filter-coffee"
+ },
+ {
+  "name": "BRAZIL Fernando Heringer Catucai – Espresso",
+  "img": "//www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_180x.jpg?v=1701269354 180w 180h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_360x.jpg?v=1701269354 360w 360h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_540x.jpg?v=1701269354 540w 540h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_720x.jpg?v=1701269354 720w 720h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_900x.jpg?v=1701269354 900w 900h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_1080x.jpg?v=1701269354 1080w 1080h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_1296x.jpg?v=1701269354 1296w 1296h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_1512x.jpg?v=1701269354 1512w 1512h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_1728x.jpg?v=1701269354 1728w 1728h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_1950x.jpg?v=1701269354 1950w 1950h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_2100x.jpg?v=1701269354 2100w 2100h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_2260x.jpg?v=1701269354 2260w 2260h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_2450x.jpg?v=1701269354 2450w 2450h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_2700x.jpg?v=1701269354 2700w 2700h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_3000x.jpg?v=1701269354 3000w 3000h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_3350x.jpg?v=1701269354 3350w 3350h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_3750x.jpg?v=1701269354 3750w 3750h,\n    \n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso.jpg?v=1701269354 4000w 4000h",
+  "price": "From €16.90",
+  "url": "https://www.fiveelephant.com/collections/coffee/products/brazil-fernando-espresso"
  },
  {
   "name": "GUATEMALA La Nueva Montaña – Espresso",
   "img": "//www.fiveelephant.com/cdn/shop/files/Five_Elephant_La_Nueva_Montana_180x.jpg?v=1703157884 180w 180h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_La_Nueva_Montana_360x.jpg?v=1703157884 360w 360h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_La_Nueva_Montana_540x.jpg?v=1703157884 540w 540h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_La_Nueva_Montana_720x.jpg?v=1703157884 720w 720h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_La_Nueva_Montana_900x.jpg?v=1703157884 900w 900h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_La_Nueva_Montana_1080x.jpg?v=1703157884 1080w 1080h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_La_Nueva_Montana_1296x.jpg?v=1703157884 1296w 1296h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_La_Nueva_Montana_1512x.jpg?v=1703157884 1512w 1512h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_La_Nueva_Montana_1728x.jpg?v=1703157884 1728w 1728h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_La_Nueva_Montana_1950x.jpg?v=1703157884 1950w 1950h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_La_Nueva_Montana_2100x.jpg?v=1703157884 2100w 2100h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_La_Nueva_Montana_2260x.jpg?v=1703157884 2260w 2260h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_La_Nueva_Montana_2450x.jpg?v=1703157884 2450w 2450h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_La_Nueva_Montana_2700x.jpg?v=1703157884 2700w 2700h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_La_Nueva_Montana_3000x.jpg?v=1703157884 3000w 3000h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_La_Nueva_Montana_3350x.jpg?v=1703157884 3350w 3350h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_La_Nueva_Montana_3750x.jpg?v=1703157884 3750w 3750h,\n    \n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_La_Nueva_Montana.jpg?v=1703157884 4000w 4000h",
-  "price": "From €17.49",
+  "price": "Sold Out",
   "url": "https://www.fiveelephant.com/collections/coffee/products/guatemala-la-nueva-montana-espresso-1"
  },
  {
@@ -150,18 +150,6 @@
   "url": "https://www.fiveelephant.com/collections/coffee/products/colombia-berry-morera"
  },
  {
-  "name": "BRAZIL Fernando Heringer Catucai – Espresso",
-  "img": "//www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_180x.jpg?v=1701269354 180w 180h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_360x.jpg?v=1701269354 360w 360h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_540x.jpg?v=1701269354 540w 540h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_720x.jpg?v=1701269354 720w 720h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_900x.jpg?v=1701269354 900w 900h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_1080x.jpg?v=1701269354 1080w 1080h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_1296x.jpg?v=1701269354 1296w 1296h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_1512x.jpg?v=1701269354 1512w 1512h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_1728x.jpg?v=1701269354 1728w 1728h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_1950x.jpg?v=1701269354 1950w 1950h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_2100x.jpg?v=1701269354 2100w 2100h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_2260x.jpg?v=1701269354 2260w 2260h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_2450x.jpg?v=1701269354 2450w 2450h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_2700x.jpg?v=1701269354 2700w 2700h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_3000x.jpg?v=1701269354 3000w 3000h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_3350x.jpg?v=1701269354 3350w 3350h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso_3750x.jpg?v=1701269354 3750w 3750h,\n    \n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Fernando_Heringer_Espresso.jpg?v=1701269354 4000w 4000h",
-  "price": "From €16.90",
-  "url": "https://www.fiveelephant.com/collections/coffee/products/brazil-fernando-espresso"
- },
- {
-  "name": "KENYA Nandi Hills – Espresso",
-  "img": "//www.fiveelephant.com/cdn/shop/products/Five_Elephant_Nandi_Hills_Espresso_180x.jpg?v=1681303449 180w 180h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Nandi_Hills_Espresso_360x.jpg?v=1681303449 360w 360h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Nandi_Hills_Espresso_540x.jpg?v=1681303449 540w 540h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Nandi_Hills_Espresso_720x.jpg?v=1681303449 720w 720h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Nandi_Hills_Espresso_900x.jpg?v=1681303449 900w 900h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Nandi_Hills_Espresso_1080x.jpg?v=1681303449 1080w 1080h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Nandi_Hills_Espresso_1296x.jpg?v=1681303449 1296w 1296h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Nandi_Hills_Espresso_1512x.jpg?v=1681303449 1512w 1512h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Nandi_Hills_Espresso_1728x.jpg?v=1681303449 1728w 1728h,\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Nandi_Hills_Espresso.jpg?v=1681303449 1731w 1731h",
-  "price": "From €16.90",
-  "url": "https://www.fiveelephant.com/collections/coffee/products/kenya-nandi-hills-espresso"
- },
- {
   "name": "House Blend – Filter Coffee",
   "img": "//www.fiveelephant.com/cdn/shop/products/Five_Elephant_House_Blend_Filter_180x.jpg?v=1679489380 180w 180h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_House_Blend_Filter_360x.jpg?v=1679489380 360w 360h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_House_Blend_Filter_540x.jpg?v=1679489380 540w 540h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_House_Blend_Filter_720x.jpg?v=1679489380 720w 720h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_House_Blend_Filter_900x.jpg?v=1679489380 900w 900h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_House_Blend_Filter_1080x.jpg?v=1679489380 1080w 1080h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_House_Blend_Filter_1296x.jpg?v=1679489380 1296w 1296h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_House_Blend_Filter_1512x.jpg?v=1679489380 1512w 1512h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_House_Blend_Filter_1728x.jpg?v=1679489380 1728w 1728h,\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_House_Blend_Filter.jpg?v=1679489380 1731w 1731h",
   "price": "From €10.90",
@@ -181,9 +169,15 @@
  },
  {
   "name": "Cold Brew",
-  "img": "//www.fiveelephant.com/cdn/shop/files/Five_Elephant_Cold_Brew_180x.jpg?v=1683634962 180w 180h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Cold_Brew_360x.jpg?v=1683634962 360w 360h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Cold_Brew_540x.jpg?v=1683634962 540w 540h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Cold_Brew_720x.jpg?v=1683634962 720w 720h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Cold_Brew_900x.jpg?v=1683634962 900w 900h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Cold_Brew_1080x.jpg?v=1683634962 1080w 1080h,\n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Cold_Brew_1296x.jpg?v=1683634962 1296w 1296h,\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    //www.fiveelephant.com/cdn/shop/files/Five_Elephant_Cold_Brew.jpg?v=1683634962 1400w 1400h",
+  "img": "//www.fiveelephant.com/cdn/shop/products/Five_Elephant_Cold_Brew_Nandi_Hills_180x.jpg?v=1707315775 180w 180h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Cold_Brew_Nandi_Hills_360x.jpg?v=1707315775 360w 360h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Cold_Brew_Nandi_Hills_540x.jpg?v=1707315775 540w 540h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Cold_Brew_Nandi_Hills_720x.jpg?v=1707315775 720w 720h,\n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Cold_Brew_Nandi_Hills_900x.jpg?v=1707315775 900w 900h,\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    //www.fiveelephant.com/cdn/shop/products/Five_Elephant_Cold_Brew_Nandi_Hills.jpg?v=1707315775 1000w 1000h",
   "price": "€25.99",
   "url": "https://www.fiveelephant.com/collections/coffee/products/cold-brew-biftu-organic"
+ },
+ {
+  "name": "COLOMBIA Las Margaritas - Premium Filter Coffee",
+  "img": "//www.fiveelephant.com/cdn/shop/files/DSC06209-Bearbeitet_180x.jpg?v=1683643507 180w 120h,\n    //www.fiveelephant.com/cdn/shop/files/DSC06209-Bearbeitet_360x.jpg?v=1683643507 360w 240h,\n    //www.fiveelephant.com/cdn/shop/files/DSC06209-Bearbeitet_540x.jpg?v=1683643507 540w 360h,\n    //www.fiveelephant.com/cdn/shop/files/DSC06209-Bearbeitet_720x.jpg?v=1683643507 720w 480h,\n    //www.fiveelephant.com/cdn/shop/files/DSC06209-Bearbeitet_900x.jpg?v=1683643507 900w 600h,\n    //www.fiveelephant.com/cdn/shop/files/DSC06209-Bearbeitet_1080x.jpg?v=1683643507 1080w 721h,\n    //www.fiveelephant.com/cdn/shop/files/DSC06209-Bearbeitet_1296x.jpg?v=1683643507 1296w 865h,\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    //www.fiveelephant.com/cdn/shop/files/DSC06209-Bearbeitet.jpg?v=1683643507 1400w 934h",
+  "price": "Sold Out",
+  "url": "https://www.fiveelephant.com/collections/coffee/products/meridian"
  },
  {
   "name": "El Salvador Las Brisas",
@@ -192,16 +186,16 @@
   "url": "https://nomadcoffee.es/products/las-brisas"
  },
  {
+  "name": "Perú Churupallana",
+  "img": "//nomadcoffee.es/cdn/shop/files/E.PE.CHU.jpg?v=1707496975",
+  "price": "12,00€ -  96,00€",
+  "url": "https://nomadcoffee.es/products/churupallana"
+ },
+ {
   "name": "Colombia El Corozal",
   "img": "//nomadcoffee.es/cdn/shop/files/corozal.jpg?v=1705485013",
   "price": "17,00€ -  68,00€",
   "url": "https://nomadcoffee.es/products/el-corozal"
- },
- {
-  "name": "Colombia El Bombo Espresso",
-  "img": "//nomadcoffee.es/cdn/shop/files/bomboespresso.jpg?v=1705484817",
-  "price": "12,00€ -  96,00€",
-  "url": "https://nomadcoffee.es/products/el-bombo-espresso"
  },
  {
   "name": "Colombia Descafeinado - Chambakú",
@@ -228,10 +222,22 @@
   "url": "https://nomadcoffee.es/products/miriam-quesada"
  },
  {
-  "name": "Colombia El Bombo Filtro",
-  "img": "//nomadcoffee.es/cdn/shop/files/bombofiltro.jpg?v=1705484864",
+  "name": "Perú Churupallana Filtro",
+  "img": "//nomadcoffee.es/cdn/shop/files/F.PE.CHU.jpg?v=1707496784",
   "price": "12,00€ -  48,00€",
-  "url": "https://nomadcoffee.es/products/el-bombo-filtro"
+  "url": "https://nomadcoffee.es/products/churupallana-filtro"
+ },
+ {
+  "name": "Perú Enma Palacios",
+  "img": "//nomadcoffee.es/cdn/shop/files/F.PE.ENMA.2024.jpg?v=1707495579",
+  "price": "17,00€ -  68,00€",
+  "url": "https://nomadcoffee.es/products/enma-palacios"
+ },
+ {
+  "name": "Ecuador Jhon Ortiz",
+  "img": "//nomadcoffee.es/cdn/shop/files/F.EC.JHON.jpg?v=1707214300",
+  "price": "19,00€ -  76,00€",
+  "url": "https://nomadcoffee.es/products/jhon-ortiz"
  },
  {
   "name": "Burundi Gahahe",
@@ -244,17 +250,5 @@
   "img": "//nomadcoffee.es/cdn/shop/files/bosque.jpg?v=1705484897",
   "price": "18,00€ -  72,00€",
   "url": "https://nomadcoffee.es/products/el-bosque"
- },
- {
-  "name": "Colombia El Jardín",
-  "img": "//nomadcoffee.es/cdn/shop/files/jardin.jpg?v=1705485040",
-  "price": "17,00€ -  68,00€",
-  "url": "https://nomadcoffee.es/products/el-jardin"
- },
- {
-  "name": "Colombia Macondo",
-  "img": "//nomadcoffee.es/cdn/shop/files/macondo.jpg?v=1705485313",
-  "price": "24,50€ -  98,00€",
-  "url": "https://nomadcoffee.es/products/macondo"
  }
 ]
