@@ -18,7 +18,7 @@ export default async function Products() {
 
     return (
         <Layout>
-            <div className="grid grid-cols-3 gap-1 justify-evenly ml-64 mt-32">
+            <div className="grid grid-cols-3 gap-1 justify-evenly ml-64 mt-32 font-pacifico">
                    {
                 Products
 
@@ -29,12 +29,14 @@ export default async function Products() {
                                 <div id="products" className="">
                                     <div id="imgContainer" className="">
                                         <Link href={p.Url} target="_blank">
-                                            <img className="h-44 w-48" src={p.Img} />
+                                            <img className="h-44 w-48 bg-white" src={p.Img} />
                                         </Link>
                                     </div>
                                     <div id="infoContainer" className="text-black">
-                                        <h1 className="">{p.Name}</h1>
-                                        <p className="">{p.Price}</p>
+                                        <Link href={p.Url} target="_blank">
+                                            <h1 className="text-2xl">{p.Name}</h1>
+                                        </Link>
+                                        <p className="text-xl">{p.Price}</p>
                                     </div>
                                 </div>
                             </>
