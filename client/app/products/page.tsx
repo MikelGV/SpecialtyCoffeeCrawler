@@ -27,16 +27,16 @@ export default async function Products() {
                         return (
                             <>
                                 <div id="products" className="">
-                                    <div id="imgContainer" className="">
+                                    <div id="imgContainer" className="h-48 w-48">
                                         <Link href={p.Url} target="_blank">
-                                            <img className="h-44 w-48 bg-white" src={p.Img} />
+                                            <img className="bg-white mb-5" src={p.Img} />
                                         </Link>
                                     </div>
-                                    <div id="infoContainer" className="text-black">
+                                    <div id="infoContainer" className="text-black w-48">
                                         <Link href={p.Url} target="_blank">
-                                            <h1 className="text-2xl">{p.Name}</h1>
+                                            <h1 className="text-xl mb-5">{p.Name}</h1>
                                         </Link>
-                                        <p className="text-xl">{p.Price}</p>
+                                        <p className="text-lg font-semibold mb-5">{p.Price}</p>
                                     </div>
                                 </div>
                             </>
