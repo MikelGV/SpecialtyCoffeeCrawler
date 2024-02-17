@@ -18,7 +18,7 @@ export default async function Products() {
 
     return (
         <Layout>
-            <div className="grid grid-cols-3 gap-1 justify-evenly ml-64 mt-32 font-pacifico">
+            <div className="grid grid-cols-3 gap-1 justify-evenly ml-72 mt-32 font-pacifico">
                    {
                 Products
 
@@ -26,17 +26,17 @@ export default async function Products() {
                     Products.map((p: any) => {
                         return (
                             <>
-                                <div id="products" className="">
-                                    <div id="imgContainer" className="h-48 w-48">
-                                        <Link href={p.Url} target="_blank">
-                                            <img className="bg-white mb-5" src={p.Img} />
+                                <div id="products" className="h-96 mb-10">
+                                    <div id="imgContainer" className="">
+                                        <Link className="group" href={p.Url} target="_blank">
+                                            <img className="bg-white w-72 mb-5 rounded-xl group-hover:opacity-75" src={p.Img} />
                                         </Link>
                                     </div>
                                     <div id="infoContainer" className="text-black w-48">
                                         <Link href={p.Url} target="_blank">
-                                            <h1 className="text-xl mb-5">{p.Name}</h1>
+                                            <h1 className="text-xl mr-5">{p.Name}</h1>
                                         </Link>
-                                        <p className="text-lg font-semibold mb-5">{p.Price}</p>
+                                        <p className="text-lg font-semibold">{p.Price}</p>
                                     </div>
                                 </div>
                             </>

@@ -34,8 +34,6 @@ func readData(c *gin.Context) {
 func main() {
     r := gin.Default()
 
-    r.GET("/")
-
     r.GET("/crawl", func(ctx *gin.Context) {
         crawler.Crawl()
         ctx.JSON(200, gin.H{
