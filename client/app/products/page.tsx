@@ -26,17 +26,17 @@ export default async function Products() {
                     Products.map((p: any) => {
                         return (
                             <>
-                                <div id="products" className="h-96 mb-10">
+                                <div id="products" className="mb-10">
                                     <div id="imgContainer" className="">
                                         <Link className="group" href={p.Url} target="_blank">
-                                            <img className="bg-white w-72 mb-5 rounded-xl group-hover:opacity-75" src={p.Img} />
+                                            <img className="object-fill bg-white w-72 mb-5 rounded-xl group-hover:opacity-75" src={p.Img} />
                                         </Link>
                                     </div>
                                     <div id="infoContainer" className="text-black w-48">
-                                        <Link href={p.Url} target="_blank">
-                                            <h1 className="text-xl mr-5">{p.Name}</h1>
+                                        <Link className="group" href={p.Url} target="_blank">
+                                            <h1 className="group-hover:opacity-75 text-xl mb-5">{p.Name}</h1>
                                         </Link>
-                                        <p className="text-lg font-semibold">{p.Price}</p>
+                                        <p className="mb-5 text-lg font-semibold">{p.Price}</p>
                                     </div>
                                 </div>
                             </>
