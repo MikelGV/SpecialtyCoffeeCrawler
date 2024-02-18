@@ -18,7 +18,7 @@ export default async function Products() {
 
     return (
         <Layout>
-            <div className="max-w-xl xl:max-w-7xl xl:mx-70 xl:my-32 md:mx-60 sm:ml-14">
+            <div className="max-w-xl xl:max-w-7xl xl:mx-70 xl:my-32 md:mx-60 md:my-32 sm:my-32 sm:ml-14">
                 <div className="grid grid-cols-1 gap-1 justify-evenly sm:grid-cols-2 lg:grid-cols-3 font-pacifico">
                     {
                         Products
