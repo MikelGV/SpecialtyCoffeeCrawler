@@ -5,7 +5,7 @@ export default function HomeS() {
     return (
 
         <div>
-            <div className="flex justify-center m-56 mb-64">
+            <div className="flex justify-center m-56 mb-40 xl:mb-64 sm:md-36">
                 <h1 className="text-black font-pacifico text-6xl">Specialty Coffee Europe</h1>
             </div>
             <div className="flex justify-center">
