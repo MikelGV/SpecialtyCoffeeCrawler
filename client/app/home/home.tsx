@@ -17,8 +17,8 @@ export default function HomeS() {
                 <div className="flex justify-center mb-20">
                     <h1 className="text-black text-4xl">Coffee Shops Crawled:</h1>
                 </div>
-                <div className="grid grid-cols-1 gap-1 justify-evenly sm:grid-cols-3 lg-grid-cols-3 font-pacifico">
-                    <div id="nomad" className="ml-5 h-72 w-72 sm:ml-40">
+                <div className="lg:ml-40 sm:ml-16 grid grid-cols-1 gap-1 justify-evenly sm:grid-cols-3 lg-grid-cols-3 font-pacifico">
+                    <div id="nomad" className="h-72 w-72">
                             <div className="mt-20 text-black">
                                 <Link href="https://nomadcoffee.es/en" target="_blank" className="font-grotesque text-3xl font-semibold h-5 w-15">NOMAD Coffee</Link>
                             </div>
