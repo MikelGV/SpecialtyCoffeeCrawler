@@ -1,13 +1,12 @@
-FROM golang:1.22rc2-alpine3.18
+FROM golang:latest
+
 
 WORKDIR /app
 
-COPY . .
+COPY . /app
 
-RUN go mod download
-
-COPY *.go ./
+RUN go build -o main .
 
 EXPOSE 8080
 
-CMD ["go", "run", "./main.go"]
+CMD ["./main"]

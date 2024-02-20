@@ -1,14 +1,14 @@
-FROM node:alpine
+FROM node:latest
 
-WORKDIR ./client
+WORKDIR ./app
 
 RUN npm install typescript
 
-COPY .package.json ./
-COPY .package-lock.json ./
+COPY ./package.json ./
 
 RUN npm install
 
 COPY . .
 
-CMD ["npm", "start"]
+EXPOSE 3000
+
