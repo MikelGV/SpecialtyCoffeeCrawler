@@ -1,19 +1,17 @@
 version: "3.8"
 
 services:
-  web:
-    build: ./nginx
-    ports:
-      - "80:80"
-    depends_on:
-      - server
   server:
+    container_name: goapp
+    image: goapp:1.0.0
     build:
       context: ./server
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
   client:
+    container_name: nextapp
+    image: nextapp:1.0.0
     build:
       context: ./client
       dockerfile: Dockerfile
