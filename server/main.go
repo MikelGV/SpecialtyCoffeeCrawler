@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/crawler"
 	"github.com/gin-gonic/gin"
@@ -33,13 +34,25 @@ func readData(c *gin.Context) {
 
 func main() {
     r := gin.Default()
+    
+    timer := time.NewTicker(86400 * time.Second)
+    quit := make(chan bool)
+    go func() {
+        for {
+            select {
+            case <- timer.C:
+                crawler.Crawl()
+            case <- quit:
+                timer.Stop()
+                return
+            }
+        }
+    }()
 
-    r.GET("/crawl", func(ctx *gin.Context) {
-        crawler.Crawl()
-        ctx.JSON(200, gin.H{
-            "msg": "this worked",
-        })
-    })
+    time.Sleep(10 * time.Second)
+
+
+
 
     r.GET("/products", readData)
 
