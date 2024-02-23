@@ -9,7 +9,7 @@ export default function HomeS() {
                 <h1 className="text-black font-pacifico text-6xl md:text-6xl sm:max-sm:text-2xl">Specialty Coffee Europe</h1>
             </div>
             <div className="flex justify-center">
-                <Link href="/#companies">
+                <Link className="scroll-smooth" href="/#companies">
                     <PlayIcon className="text-blue-950 w-40 h-40 rotate-90"/>
                 </Link>
             </div>
