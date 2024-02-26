@@ -4,7 +4,7 @@ export default function TopBar() {
     return (
         <nav className="flex font-pacifico bg-green-950 px-4 border-b md:shadow-lg items-center justify-between">
             <h1 className="text-lg py-4">
-                Specialty Coffee Europe
+                The CoffeeFinder
             </h1>
             <ul className="flex items-center space-x-6">
                 <li>

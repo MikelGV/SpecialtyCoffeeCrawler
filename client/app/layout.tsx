@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Specialty Coffee",
+  title: "The CoffeeFinder",
   description: "Search online specialty coffee shops in Europe",
 };
 
