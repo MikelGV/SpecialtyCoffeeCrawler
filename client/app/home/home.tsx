@@ -6,7 +6,7 @@ export default function HomeS() {
 
         <div>
             <div className="flex justify-center m-56 mb-40 xl:mb-64 sm:max-sm:mb-36">
-                <h1 className="text-black font-pacifico text-6xl md:text-6xl sm:max-sm:text-2xl">Specialty Coffee Europe</h1>
+                <h1 className="text-black font-pacifico text-6xl md:text-6xl sm:max-sm:text-2xl">The CoffeeFinder</h1>
             </div>
             <div className="flex justify-center">
                 <Link className="scroll-smooth" href="/#companies">
