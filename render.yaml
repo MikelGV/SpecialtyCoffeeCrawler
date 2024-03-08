@@ -1,3 +1,10 @@
 services:
   - type: web
-    name: 
+    name: client
+    env: docker
+    dockerfilePath: ./client/Dockerfile
+  
+  - type: web
+    name: server
+    env: docker
+    dockerfilePath: ./server/Dockerfile
