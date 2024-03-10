@@ -1,9 +1,15 @@
 services:
   - type: web
     name: client
-    env: docker
-    dockerfilePath: ./client/Dockerfile
-  
+    branch: main
+    runtime: static
+    buildCommand: cd client; yarn; yarn build
+    staticPublishPath: ./client/.next
+    buildFiler:
+      paths:
+        -client/**/*.js
+      ignoredPaths:
+        -client/**/*.test.js 
   - type: web
     name: server
     runtime: go

@@ -9,6 +9,7 @@ import (
 
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/crawler"
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 )
 type Data struct {
     Name string
@@ -35,6 +36,14 @@ func readData(c *gin.Context) {
 func main() {
     r := gin.Default()
     
+    err := godotenv.Load()
+
+    if err != nil {
+        log.Fatal("Error loading .env file:", err)
+    }
+
+    port := os.Getenv("PORT")
+    
     timer := time.NewTicker(86400 * time.Second)
     quit := make(chan bool)
     go func() {
@@ -56,6 +65,6 @@ func main() {
 
     r.GET("/products", readData)
 
-    r.Run("localhost:8080")
+    r.Run(port)
     
 }
