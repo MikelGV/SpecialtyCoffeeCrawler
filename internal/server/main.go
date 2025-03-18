@@ -11,6 +11,10 @@ import (
 	"os/signal"
 	"sync"
 	"time"
+
+	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/database"
+	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/server/config"
+	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/server/logger"
 )
 
 /**
@@ -18,7 +22,11 @@ import (
     Here we set up top-level http stuff such as CORS, auth middleware and logging
 **/
 
-func NewServer() http.Handler {
+func NewServer(
+    logger *logger.Logger,
+    cfg *config.Config,
+    db *database.DBStore,
+    ) http.Handler {
     mux := http.NewServeMux()
 
     var handler http.Handler = mux
@@ -35,7 +43,20 @@ func run (
     ctx, cancel := signal.NotifyContext(ctx, os.Interrupt)
     defer cancel()
 
-    srv := NewServer()
+    logg := logger.NewLogger()
+
+    db, err := database.Connect()
+
+    if err != nil {
+        logg.Error("Failed to connect to database:", err.Error())
+        return fmt.Errorf("Failed to connect to database: %w:", err)
+    }
+
+    srv := NewServer(
+        logg,
+        &config.Config{},
+        db,
+    )
 
     httpServer := &http.Server{
         Addr: net.JoinHostPort("localhost", "8080"),
