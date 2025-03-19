@@ -11,6 +11,7 @@ import (
 
 type DBStore struct {
     Conn *sql.DB
+    Users *UserStore
 }
 
 func Connect() (*DBStore, error) {
@@ -18,6 +19,11 @@ func Connect() (*DBStore, error) {
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "error opening database: %s\n", err)
+        return nil, err 
+    }
+
+    if err := initUsers(db); err != nil {
+        fmt.Fprintf(os.Stderr, "error creating users database table: %s\n", err)
         return nil, err 
     }
 
@@ -29,6 +35,7 @@ func Connect() (*DBStore, error) {
     fmt.Println("Database Connection Stablished")
     return &DBStore{
         Conn: db,
+        Users: &UserStore{db},
     }, nil
 }
 
@@ -36,4 +43,21 @@ func Connect() (*DBStore, error) {
     Create User Table if it's not created
 **/
 func initUsers(db *sql.DB) error {
+    query := `CREATE TABLE IF NOT EXISTS users (
+        id SERIAL PRIMARY KEY,
+        name TEXT NOT NULL,
+        email TEXT NOT NULL UNIQUE,
+        password TEXT NOT NULL UNIQUE,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )`
+
+    _, err := db.Exec(query)
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "error creating users table: %s", err)
+        return err
+    }
+
+    fmt.Println("Users table is ready")
+    return nil
 }

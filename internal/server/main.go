@@ -12,6 +12,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/MikelGV/SpecialtyCoffeeCrawler/cmd/api/routes"
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/database"
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/server/config"
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/server/logger"
@@ -26,8 +27,16 @@ func NewServer(
     logger *logger.Logger,
     cfg *config.Config,
     db *database.DBStore,
+    userStore *database.UserStore,
     ) http.Handler {
     mux := http.NewServeMux()
+
+    routes.AddRoutes(
+        mux, 
+        *cfg, 
+        logger, 
+        userStore,
+    )
 
     var handler http.Handler = mux
 
@@ -56,6 +65,7 @@ func run (
         logg,
         &config.Config{},
         db,
+        db.Users,
     )
 
     httpServer := &http.Server{
