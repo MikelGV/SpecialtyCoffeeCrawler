@@ -11,10 +11,15 @@ import (
 type Config struct {
     Host string
     Port string
+    JwtSecretKey string
+    GClientID string
+    GCSecret string
+    GScopeUrl string
+    GRedirectUrl string
 }
 
 
-var env = initConfig()
+var Env = initConfig()
 
 func initConfig() Config {
     err := godotenv.Load()
@@ -25,6 +30,11 @@ func initConfig() Config {
     return Config{
         Host: getEnv("HOST", "localhost"),
         Port: getEnv("PORT", "3000"),
+        JwtSecretKey: getEnv("JWTSECRETKEY", "somethingSuperSecret"),
+        GClientID: getEnv("GCCLIENTID", "failed"),
+        GCSecret: getEnv("GCSECRET", "somethingSecret"),
+        GScopeUrl: getEnv("GSOPEURL", "someScope"),
+        GRedirectUrl: getEnv("GREDIRECTURL", "someUrl"),
     }
 }
 

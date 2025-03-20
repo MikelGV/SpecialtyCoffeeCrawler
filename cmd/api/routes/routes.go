@@ -16,4 +16,8 @@ func AddRoutes(
     usrStore *database.UserStore,
 ) {
     mux.Handle("/api/signup", api.PostCreateUserHandler(usrStore, log))
+    mux.Handle("/api/login", api.LogInWithJWTHandler(log, usrStore))
+    mux.Handle("/api/logout", api.LogoutHandler(log, usrStore))
+    mux.Handle("/api/auth/google", api.Oauth2LoginHandler(log, usrStore))
+    mux.Handle("/api/auth/google/callback", api.GoogleLoginCallback(log, usrStore))
 }

@@ -2,12 +2,16 @@ package utils
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"net/http"
 
+	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/server/config"
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/server/logger"
+	"github.com/golang-jwt/jwt/v5"
 	"golang.org/x/crypto/bcrypt"
 )
+var SecretKey = []byte(config.Env.JwtSecretKey)
 
 func Encode[T any](w http.ResponseWriter, r *http.Request, status int, v T) error {
     w.Header().Set("Content-Type", "application/json")
@@ -43,4 +47,36 @@ func EncryptPassowrd(password string) (string, error) {
 func ComparePassword(encrypted string, pWord []byte) bool {
     err := bcrypt.CompareHashAndPassword([]byte(encrypted), pWord)
     return err == nil 
+}
+
+
+func GetUserIdFromToken(r *http.Request) (string, error) {
+    cookie, err := r.Cookie("auth_token")
+    if err != nil {
+        return "", errors.New("missing auth token")
+    }
+
+    token, err := jwt.Parse(cookie.Value, func(t *jwt.Token) (interface{}, error) {
+        if _, ok := t.Method.(*jwt.SigningMethodHMAC); !ok {
+            return nil, errors.New("invalid signing method")
+        }
+        return SecretKey, nil
+    })
+
+    if err != nil || !token.Valid {
+        return "", errors.New("invalid token")
+    }
+
+    claims, ok := token.Claims.(jwt.MapClaims)
+
+    if !ok {
+        return "", errors.New("invalid token claims")
+    }
+
+    userId, ok := claims["userId"].(string)
+    if !ok {
+        return "", errors.New("user ID not found in token")
+    }
+
+    return userId, nil 
 }
