@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/cmd/utils"
+	"github.com/MikelGV/SpecialtyCoffeeCrawler/cmd/web/templates"
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/database"
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/server/logger"
 )
@@ -17,6 +18,27 @@ func GetUserSettingHandler(us *database.UserStore, log *logger.Logger) http.Hand
         if r.Method != http.MethodGet {
             log.Error("Invalid Method", "method", r.Method)
             http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
+            return
+        }
+        
+        userId, err := utils.GetUserIdFromToken(r) 
+        if err != nil {
+            log.Error("couldn't get userId from token", "error", err)
+            http.Error(w, "Unauthorized", http.StatusUnauthorized)
+            return
+        }
+
+        user, err := us.GetUsersById(userId)
+        if err != nil {
+            log.Error("couldn't get user from userID", "error", err)
+            http.Error(w, "user not found", http.StatusInternalServerError)
+            return
+        }
+
+        err = templates.SettingsPage(user).Render(r.Context(), w)
+        if err != nil {
+            log.Error("Tempolate rendering error", "error", err)
+            http.Error(w, "Internal Server Error", http.StatusInternalServerError)
             return
         }
     })
@@ -77,7 +99,6 @@ func PostCreateUserHandler(us *database.UserStore, log *logger.Logger) http.Hand
 /**
     API endpoint that handles the PUT http request for updating a user
 **/
-/**
 func PutUpdateUserHandler(us *database.UserStore, log *logger.Logger) http.Handler {
     return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
         if r.Method != http.MethodPut {
@@ -87,7 +108,7 @@ func PutUpdateUserHandler(us *database.UserStore, log *logger.Logger) http.Handl
         }
 
         //I need to add a GetUserIDFromToken function later
-        userId, err := GetUserIdFromTokne(r)
+        userId, err := utils.GetUserIdFromToken(r)
         if err != nil {
             http.Error(w, "Unauthorized", http.StatusUnauthorized)
             return
@@ -107,7 +128,11 @@ func PutUpdateUserHandler(us *database.UserStore, log *logger.Logger) http.Handl
             return
         } 
         
-        usr, err := us.UpdateUser(database.User{
+        /**
+            I belive here i should do something like redirect to 
+            /profile/user.id or idk for now i will stay with _
+        **/
+         _, err = us.UpdateUser(database.User{
             Name: req.Name,
             Email: req.Email,
             Password: req.Password,
@@ -123,4 +148,30 @@ func PutUpdateUserHandler(us *database.UserStore, log *logger.Logger) http.Handl
         w.Write([]byte("User updated successfully!"))
     })
 }
-**/
+
+func DeleteUserHandler(us *database.UserStore, log *logger.Logger) http.Handler {
+    return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+        if r.Method != http.MethodDelete {
+            log.Error("Failed to get the right method", "method", r.Method)
+            http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
+            return 
+        }
+    
+        userId, err := utils.GetUserIdFromToken(r) 
+        if err != nil {
+            log.Error("couldn't get userId from token", "error", err)
+            http.Error(w, "Unauthorized", http.StatusUnauthorized)
+            return
+        }
+
+        err = us.DeleteUser(userId)
+        if err != nil {
+            log.Error("couldn't get user from userID", "error", err)
+            http.Error(w, "user not found", http.StatusInternalServerError)
+            return
+        }
+
+        w.Write([]byte("User deleted successfully!"))
+
+    })
+} 
