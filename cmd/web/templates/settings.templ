@@ -1,8 +1,12 @@
 package templates
 import( 
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/database"
+    "github.com/MikelGV/SpecialtyCoffeeCrawler/cmd/web/assets/layout"
 )
+templ settingsPageComponent(user *database.User) {
+    <div>Hello, {user.Name}</div>
+}
 
 templ SettingsPage(user *database.User) {
-    <div>Hello, user.Name</div>    
+    @layout.Base(settingsPageComponent(user))
 }

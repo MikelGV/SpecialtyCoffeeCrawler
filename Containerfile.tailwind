@@ -1,0 +1,12 @@
+from node:22-alpine
+
+WORKDIR /app
+
+COPY pakcage.json package-lock.json tailwind.config.js ./
+COPY cmd/web/assets/css/intpu cmd/assets/css/
+
+RUN npm install
+
+VOLUME /app/cmd/web/assets/css
+
+CMD ["npx", "tailwindcss", "-i", "cmd/web/assets/css/input.css", "-o", "cmd/web/assets/css/tailwindcss", "--build"]

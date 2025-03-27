@@ -1,0 +1,28 @@
+{
+  "name": "specialtycoffeecrawler",
+  "version": "1.0.0",
+  "description": "The Specialty Coffee Finder is a tool designed to connect coffee enthusiasts with high-quality specialty coffee sources by aggregating publicly available information from coffee roaster websites. Our aim is to create a centralized resource that promotes specialty cofee businesses and enhances discoverability for consumers.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss -i /cmd/web/assets/css/input.css -o /cmd/web/assets/css/tailwind.css -m",
+    "watch": "tailwindcss -i /cmd/web/assets/css/input.css -o /cmd/web/assets/css/tailwind.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikelGV/SpecialtyCoffeeCrawler.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MikelGV/SpecialtyCoffeeCrawler/issues"
+  },
+  "homepage": "https://github.com/MikelGV/SpecialtyCoffeeCrawler#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.17"
+  }
+}
