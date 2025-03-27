@@ -12,6 +12,8 @@ import (
 type DBStore struct {
     Conn *sql.DB
     Users *UserStore
+    Tags *TagsStore
+    UserTags *User_TagsStore
 }
 
 func Connect() (*DBStore, error) {
@@ -27,6 +29,16 @@ func Connect() (*DBStore, error) {
         return nil, err 
     }
 
+    if err := initTags(db); err != nil {
+        fmt.Fprintf(os.Stderr, "error creating tags database table: %s\n", err)
+        return nil, err
+    }
+
+    if err := initUser_Tags(db); err != nil {
+        fmt.Fprintf(os.Stderr, "error creating user_tags database table: %s\n", err)
+        return nil, err
+    }
+
     if err := db.Ping(); err != nil {
         fmt.Fprintf(os.Stderr, "error pinging databasei: %s", err)
         return nil, err 
@@ -36,6 +48,8 @@ func Connect() (*DBStore, error) {
     return &DBStore{
         Conn: db,
         Users: &UserStore{db},
+        Tags: &TagsStore{db},
+        UserTags: &User_TagsStore{db},
     }, nil
 }
 
@@ -47,9 +61,8 @@ func initUsers(db *sql.DB) error {
         id SERIAL PRIMARY KEY,
         name TEXT NOT NULL,
         email TEXT NOT NULL UNIQUE,
-        password TEXT NOT NULL UNIQUE,
-        role TEXT NOT NULL,
-        tags TEXT,
+        password TEXT NOT NULL,
+        role BOOL NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )`
@@ -61,5 +74,38 @@ func initUsers(db *sql.DB) error {
     }
 
     fmt.Println("Users table is ready")
+    return nil
+}
+
+func initTags(db *sql.DB) error {
+    query := `CREATE TABLE IF NOT EXISTS tags (
+        id SERIAL PRIMARY KEY,
+        name TEXT NOT NULL UNIQUE
+    )` 
+
+    _, err := db.Exec(query)
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "error creating tags table: %s", err)
+        return err
+    }
+
+    fmt.Println("Tags table is ready")
+    return nil
+}
+
+func initUser_Tags(db *sql.DB) error {
+    query := `CREATE TABLE IF NOT EXISTS user_tags (
+        user_id INT REFERENCES users(id),
+        tag_id INT REFERENCES tags(id),
+        PRIMARY KEY (user_id, tag_id)
+    )`
+
+    _, err := db.Exec(query)
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "error creating User_Tags table: %s", err)
+        return err
+    }
+
+    fmt.Println("User_Tags table is ready")
     return nil
 }
