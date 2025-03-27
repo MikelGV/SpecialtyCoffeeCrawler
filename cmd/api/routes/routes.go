@@ -4,9 +4,12 @@ import (
 	"net/http"
 
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/cmd/api"
+	"github.com/MikelGV/SpecialtyCoffeeCrawler/cmd/web"
+	"github.com/MikelGV/SpecialtyCoffeeCrawler/cmd/web/assets/layout"
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/database"
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/server/config"
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/server/logger"
+	"github.com/a-h/templ"
 )
 
 func AddRoutes(
@@ -15,6 +18,8 @@ func AddRoutes(
     log *logger.Logger,
     usrStore *database.UserStore,
 ) {
+    c := layout.Base(web.HomePage())
+    mux.Handle("/", templ.Handler(c))
     /**
         This are the login, signup, and logout routes
     **/

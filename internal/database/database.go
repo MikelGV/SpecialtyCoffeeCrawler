@@ -48,6 +48,8 @@ func initUsers(db *sql.DB) error {
         name TEXT NOT NULL,
         email TEXT NOT NULL UNIQUE,
         password TEXT NOT NULL UNIQUE,
+        role TEXT NOT NULL,
+        tags TEXT,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )`

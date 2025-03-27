@@ -16,6 +16,7 @@ type User struct {
     Name string 
     Email string 
     Password string 
+    Role string
     CreatedAt string 
     UpdatedAt string 
 }
@@ -24,7 +25,7 @@ type User struct {
     Handles the Create user call to the database
 **/
 func (u UserStore) CreateUser(usr User) error {
-    _, err := u.Db.Exec("INSERT INTO users (name, email, password) VALUES ($1, $2, $3)", 
+    _, err := u.Db.Exec("INSERT INTO users (name, email, password, role) VALUES ($1, $2, $3, $4)", 
         usr.Name, usr.Email, usr.Password)
 
     if err != nil {
