@@ -14,6 +14,9 @@ type DBStore struct {
     Users *UserStore
     Tags *TagsStore
     UserTags *User_TagsStore
+    Products *ProductsStore
+    Roasters *RoastersStore
+    ProductTags *ProductTagsStore
 }
 
 func Connect() (*DBStore, error) {
@@ -39,6 +42,21 @@ func Connect() (*DBStore, error) {
         return nil, err
     }
 
+    if err := initRoasters(db); err != nil {
+        fmt.Fprintf(os.Stderr, "error creating roasters database table: %s\n", err)
+        return nil, err
+    }
+
+    if err := initProducts(db); err != nil {
+        fmt.Fprintf(os.Stderr, "error creating products database table: %s\n", err)
+        return nil, err
+    }
+
+    if err := initProduct_Tags(db); err != nil {
+        fmt.Fprintf(os.Stderr, "error creating products_tags database table: %s\n", err)
+        return nil, err
+    }
+
     if err := db.Ping(); err != nil {
         fmt.Fprintf(os.Stderr, "error pinging databasei: %s", err)
         return nil, err 
@@ -50,6 +68,9 @@ func Connect() (*DBStore, error) {
         Users: &UserStore{db},
         Tags: &TagsStore{db},
         UserTags: &User_TagsStore{db},
+        Products: &ProductsStore{db},
+        Roasters: &RoastersStore{db},
+        ProductTags: &ProductTagsStore{db},
     }, nil
 }
 
@@ -73,6 +94,17 @@ func initUsers(db *sql.DB) error {
         return err
     }
 
+    // This has to be removed after demo is over
+    insertUserQuery := `INSER INTO users (name, email, password, role) 
+                        VALUES ($1, $2, $3, $4) ON CONFLICT (email) DO NOTHING`
+
+    _, err = db.Exec(insertUserQuery, "TestUser", "test@test.com", "thisisatest", false)
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "error creating users: %s", err)
+        return err
+    }
+
+    // This stays
     fmt.Println("Users table is ready")
     return nil
 }
@@ -93,6 +125,7 @@ func initTags(db *sql.DB) error {
     return nil
 }
 
+// Maybe
 func initUser_Tags(db *sql.DB) error {
     query := `CREATE TABLE IF NOT EXISTS user_tags (
         user_id INT REFERENCES users(id),
@@ -107,5 +140,69 @@ func initUser_Tags(db *sql.DB) error {
     }
 
     fmt.Println("User_Tags table is ready")
+    return nil
+}
+
+func initProducts(db *sql.DB) error {
+    query := `CREATE TABLE IF NOT EXISTS products (
+        id SERIAL PRIMARY KEY,
+        title TEXT NOT NULL,
+        price DECIMAL(10,2) NOT NULL,
+        prImg TEXT NOT NULL,
+        pUrl TEXT NOT NULL,
+        type TEXT NOT NULL,
+        origin TEXT NOT NULL,
+        method TEXT NOT NULL, 
+        roaster_id INT NOT NULL REFERENCES roaster(id),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )`
+
+    _, err := db.Exec(query)
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "error creating products table: %s", err)
+        return err
+    }
+
+    fmt.Println("Products table is ready")
+    return nil
+}
+
+func initProduct_Tags(db *sql.DB) error {
+    query := `CREATE TABLE IF NOT EXISTS product_tags (
+        product_id INT REFERENCES products(id),
+        tag_id INT REFERENCES tags(id),
+        PRIMARY KEY (product_id, tag_id)
+    )`
+
+    _, err := db.Exec(query)
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "error creating Product_Tags table: %s", err)
+        return err
+    }
+
+    fmt.Println("Product_Tags table is ready")
+    return nil
+}
+
+func initRoasters(db *sql.DB) error {
+    query := `CREATE TABLE IF NOT EXISTS roasters (
+        id SERIAL PRIMARY KEY,
+        name TEXT NOT NULL,
+        location TEXT NOT NULL,
+        description TEXT,
+        websiteUrl TEXT NOT NULL,
+        contact_email TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )`
+
+    _, err := db.Exec(query)
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "error creating roasters table: %s", err)
+        return err 
+    }
+
+    fmt.Println("Roasters table is ready")
     return nil
 }
