@@ -83,7 +83,6 @@ func initUsers(db *sql.DB) error {
         name TEXT NOT NULL,
         email TEXT NOT NULL UNIQUE,
         password TEXT NOT NULL,
-        role BOOL NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )`
@@ -95,10 +94,10 @@ func initUsers(db *sql.DB) error {
     }
 
     // This has to be removed after demo is over
-    insertUserQuery := `INSER INTO users (name, email, password, role) 
-                        VALUES ($1, $2, $3, $4) ON CONFLICT (email) DO NOTHING`
+    insertUserQuery := `INSERT INTO users (name, email, password) 
+                        VALUES ($1, $2, $3) ON CONFLICT (email) DO NOTHING`
 
-    _, err = db.Exec(insertUserQuery, "TestUser", "test@test.com", "thisisatest", false)
+    _, err = db.Exec(insertUserQuery, "TestUser", "test@test.com", "thisisatest")
     if err != nil {
         fmt.Fprintf(os.Stderr, "error creating users: %s", err)
         return err
@@ -153,9 +152,10 @@ func initProducts(db *sql.DB) error {
         type TEXT NOT NULL,
         origin TEXT NOT NULL,
         method TEXT NOT NULL, 
-        roaster_id INT NOT NULL REFERENCES roaster(id),
+        roaster_id INT NOT NULL REFERENCES roasters(id),
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        CONSTRAINT unique_title_roaster UNIQUE (title, roaster_id)
     )`
 
     _, err := db.Exec(query)
@@ -188,7 +188,7 @@ func initProduct_Tags(db *sql.DB) error {
 func initRoasters(db *sql.DB) error {
     query := `CREATE TABLE IF NOT EXISTS roasters (
         id SERIAL PRIMARY KEY,
-        name TEXT NOT NULL,
+        name TEXT NOT NULL UNIQUE,
         location TEXT NOT NULL,
         description TEXT,
         websiteUrl TEXT NOT NULL,

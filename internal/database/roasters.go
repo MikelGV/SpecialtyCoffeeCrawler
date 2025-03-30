@@ -29,3 +29,14 @@ func (r RoastersStore)InsertRoaster(rst Roasters) error {
 
     return nil
 }
+
+/**
+func (r RoastersStore) GetAllRoasters() ([]*Roasters, error) {
+}
+
+func (r RoastersStore) GetAllRoasterByProductsFilter() ([]*Roasters, error) {}
+
+func (r RoastersStore) GetAllRoastersByLocation() ([]*Roasters, error) {}
+
+func (r RoastersStore) GetAllRoastersByLocationAndProductTags() ([]*Roasters, error) {}
+**/

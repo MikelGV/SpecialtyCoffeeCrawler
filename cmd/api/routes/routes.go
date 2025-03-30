@@ -14,6 +14,11 @@ func AddRoutes(
     conf config.Config,
     log *logger.Logger,
     usrStore *database.UserStore,
+    rstStore *database.RoastersStore,
+    productStore *database.ProductsStore,
+    productTagsStore *database.ProductTagsStore,
+    tagsStore *database.TagsStore,
+    usrTagStore *database.User_TagsStore,
 ) {
     fs := http.FileServer(http.Dir("/cmd/web/assets"))
     mux.Handle("/assets/", http.StripPrefix("/assets/", fs))

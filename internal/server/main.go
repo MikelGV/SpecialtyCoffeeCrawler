@@ -13,6 +13,7 @@ import (
 	"time"
 
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/cmd/api/routes"
+	"github.com/MikelGV/SpecialtyCoffeeCrawler/cmd/utils"
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/database"
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/server/config"
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/server/logger"
@@ -28,6 +29,11 @@ func NewServer(
     cfg *config.Config,
     db *database.DBStore,
     userStore *database.UserStore,
+    roastersStore *database.RoastersStore,
+    productStore *database.ProductsStore,
+    productTagsStore *database.ProductTagsStore,
+    tagsStore *database.TagsStore,
+    usrTags *database.User_TagsStore,
     ) http.Handler {
     mux := http.NewServeMux()
 
@@ -36,6 +42,11 @@ func NewServer(
         *cfg, 
         logger, 
         userStore,
+        roastersStore,
+        productStore,
+        productTagsStore,
+        tagsStore,
+        usrTags,
     )
 
     var handler http.Handler = mux
@@ -61,11 +72,21 @@ func run (
         return fmt.Errorf("Failed to connect to database: %w:", err)
     }
 
+    if err := utils.InitializeDemoDB(db); err != nil {
+        logg.Error("Failed to initialize database with dummy data:", err.Error())
+        return fmt.Errorf("failed to initialize database: %w", err)
+    }
+
     srv := NewServer(
         logg,
         &config.Config{},
         db,
         db.Users,
+        db.Roasters,
+        db.Products,
+        db.ProductTags,
+        db.Tags,
+        db.UserTags,
     )
 
     httpServer := &http.Server{

@@ -33,3 +33,11 @@ func (p ProductsStore) InsertProduct(pr Products, roasterId string) error {
 
     return nil
 }
+
+/**
+func (p ProductsStore) GetAllProductsByRoasterID() (*Products, error) {
+}
+
+func (p ProductsStore) GetAllRoasterProductsByFilter() (*Products, error) {
+}
+**/

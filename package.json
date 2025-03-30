@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tailwindcss -i /cmd/web/assets/css/input.css -o /cmd/web/assets/css/tailwind.css -m",
-    "watch": "tailwindcss -i /cmd/web/assets/css/input.css -o /cmd/web/assets/css/tailwind.css -w"
+    "build": "tailwindcss -i cmd/web/assets/css/input.css -o cmd/web/assets/css/tailwind.css -m",
+    "watch": "tailwindcss -i cmd/web/assets/css/input.css -o cmd/web/assets/css/tailwind.css -w"
   },
   "repository": {
     "type": "git",
