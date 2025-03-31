@@ -15,7 +15,20 @@ type RoasterRequest struct {
     ContactEmail string `json:"contact_email"`
 }
 
+/**
+    Get the roasters profile by the id
+**/
 func GetRoasterProfileHandler(log *logger.Logger, roaster *database.RoastersStore) http.Handler {
+    return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+        if r.Method != http.MethodGet {
+            log.Error("Failed to get proper method", "method", r.Method)
+            http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
+            return
+        }
+    })
+} 
+
+func GetAllRoasterProfileHandler(log *logger.Logger, roaster *database.RoastersStore) http.Handler {
     return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
         if r.Method != http.MethodGet {
             log.Error("Failed to get proper method", "method", r.Method)

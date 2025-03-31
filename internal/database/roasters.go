@@ -31,6 +31,22 @@ func (r RoastersStore)InsertRoaster(rst Roasters) error {
     return nil
 }
 
+func (r RoastersStore) GetRoasterById(roaster_id string) (*Roasters, error) {
+    var rst Roasters
+
+    err := r.DB.QueryRow("SELECT id, location, description, websiteUrl, contact_email FROM roasters WHERE id = $1", roaster_id).Scan(
+        &rst.Id, &rst.Name, &rst.Location, &rst.Description, &rst.WebsiteUrl, &rst.ContactEmail)
+
+    if err != nil {
+        if err == sql.ErrNoRows {
+            return nil, nil
+        }
+        return nil, fmt.Errorf("error retrieving user: %w", err)
+    }
+
+    return &rst, nil
+}
+
 func (r RoastersStore) GetAllRoasters() ([]*Roasters, error) {
     query := `SELECT * FROM roasters`
     rows, err := r.DB.Query(query)
@@ -136,7 +152,6 @@ func (r RoastersStore) GetAllRoastersByLocation(location string) ([]*Roasters, e
 func (r RoastersStore) GetAllRoastersByUser_Tags(tagNames []string) ([]*Roasters, error) {
     placeholders := make([]string, len(tagNames))
     args := make([]interface{}, len(tagNames))
-    args = append(args, roaster_id)
     for i, tag := range tagNames {
         placeholders[i] = fmt.Sprintf("$%d", i+2) 
         args[i] = tag

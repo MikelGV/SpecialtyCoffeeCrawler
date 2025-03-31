@@ -23,7 +23,8 @@ func AddRoutes(
     fs := http.FileServer(http.Dir("/cmd/web/assets"))
     mux.Handle("/assets/", http.StripPrefix("/assets/", fs))
 
-    mux.Handle("/", api.GetHomePage())
+    mux.Handle("/", api.GetHomePage(log))
+    mux.Handle("/dashboard", api.GetDashboard(log, rstStore, usrTagStore))
     /**
         This are the login, signup, and logout routes
     **/

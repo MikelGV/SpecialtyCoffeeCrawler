@@ -51,6 +51,7 @@ func (t TagsStore) GetAllTags() ([]*Tags, error) {
     return allTags, nil
 }
 
+
 func scanRowsIntoTags(rows *sql.Rows) (*Tags, error) {
     tgs := new(Tags)
 
