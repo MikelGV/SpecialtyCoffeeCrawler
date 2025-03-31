@@ -40,7 +40,7 @@ func (u UserStore) CreateUser(usr User) error {
 func (u UserStore) GetUsersById(id string) (*User, error) {
     var usr User
 
-    err := u.Db.QueryRow("SELECT id, name, email FROM users WHER id = $1", id).Scan(
+    err := u.Db.QueryRow("SELECT id, name, email FROM users WHERE id = $1", id).Scan(
         &usr.Id, &usr.Name, &usr.Email)
 
     if err != nil {
