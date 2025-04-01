@@ -90,7 +90,7 @@ func run (
     )
 
     httpServer := &http.Server{
-        Addr: net.JoinHostPort("localhost", "8080"),
+        Addr: net.JoinHostPort(config.Env.Host, config.Env.Port),
         Handler: srv,
     }
 

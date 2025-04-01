@@ -24,7 +24,12 @@ func AddRoutes(
     fs := http.FileServer(http.Dir("/cmd/web/assets"))
     mux.Handle("/assets/", http.StripPrefix("/assets/", fs))
 
+    /**
+        Logged Out pages
+    **/
     mux.Handle("/", api.GetHomePage(log))
+    mux.Handle("/signup", api.GetSignUp(log))
+    mux.Handle("/login", api.GetLogIn(log))
 
     /**
         Loged In Pages
