@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tailwindcss -i cmd/web/assets/css/input.css -o cmd/web/assets/css/tailwind.css -m",
-    "watch": "tailwindcss -i cmd/web/assets/css/input.css -o cmd/web/assets/css/tailwind.css -w"
+    "build": "tailwindcss -i ./cmd/web/assets/css/input.css -o ./cmd/web/assets/css/tailwind.css -m",
+    "watch": "tailwindcss -i ./cmd/web/assets/css/input.css -o ./cmd/web/assets/css/tailwind.css -w"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/MikelGV/SpecialtyCoffeeCrawler#readme",
   "devDependencies": {
-    "@tailwindcss/cli": "^4.0.17"
+    "@tailwindcss/cli": "^4.0.17",
+    "tailwindcss": "^4.0.17"
   }
 }

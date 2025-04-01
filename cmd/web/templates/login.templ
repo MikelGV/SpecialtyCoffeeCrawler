@@ -2,6 +2,21 @@ package templates
 
 import "github.com/MikelGV/SpecialtyCoffeeCrawler/cmd/web/assets/layout"
 
+templ LoginPageComponent() {
+    <div class="text-2xl">
+        <div class="">
+            <img href="" class="" />
+        </div>
+        <div class="">
+            <h2 class>Welcome Back Nomad</h2>
+            <input class="" type="email" placeholder="email" />
+            <input class="" type="password" placeholder="password" />
+            <button class="">Log In</button>
+            <a class="" href="/signup">Join Now</a>
+        </div>
+    </div>
+}
+
 templ LoginPage() {
-    @layout.Base()
+    @layout.Base(LoginPageComponent())
 }

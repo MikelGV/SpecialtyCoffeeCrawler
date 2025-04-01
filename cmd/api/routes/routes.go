@@ -2,6 +2,7 @@ package routes
 
 import (
 	"net/http"
+	"strings"
 
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/cmd/api"
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/cmd/middleware"
@@ -21,8 +22,24 @@ func AddRoutes(
     tagsStore *database.TagsStore,
     usrTagStore *database.User_TagsStore,
 ) {
-    fs := http.FileServer(http.Dir("/cmd/web/assets"))
-    mux.Handle("/assets/", http.StripPrefix("/assets/", fs))
+    fs := http.FileServer(http.Dir("cmd/web/assets"))
+    mux.HandleFunc("/assets/", func(w http.ResponseWriter, r *http.Request) {
+        path := strings.TrimPrefix(r.URL.Path, "/assets")
+
+        if strings.HasPrefix(path, "/") {
+            path = path[1:]
+        }
+
+        if strings.HasSuffix(path, ".css") {
+            w.Header().Set("Content-Type", "text/css; charset=utf-8")
+        } else if strings.HasSuffix(path, ".js") {
+            w.Header().Set("Content-Type", "application/javascript; charset=utf-8")
+        } else {
+            w.Header().Set("Content-Type", "application/octet-stream")
+        }
+
+        http.StripPrefix("/assets/", fs).ServeHTTP(w, r)
+    })
 
     /**
         Logged Out pages
