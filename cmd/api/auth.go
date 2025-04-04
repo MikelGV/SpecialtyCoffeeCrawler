@@ -30,7 +30,7 @@ var googleOauthConfig = &oauth2.Config {
 **/
 func LogInWithJWTHandler(log *logger.Logger, user *database.UserStore) http.Handler {
     return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-        if r.Method != http.MethodPost {
+        if r.Method != http.MethodPost  && r.Method != http.MethodOptions{
             log.Error("Method Not Allowed", "method", r.Method)
             http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
             return
@@ -41,6 +41,11 @@ func LogInWithJWTHandler(log *logger.Logger, user *database.UserStore) http.Hand
             Password string `json:"password"`
         }
 
+        type Response struct {
+            Message string `json:"message"`
+            Token string `json:"token,omitempty"`
+        }
+
         req, err := utils.Decode[Request](r)
         if err != nil {
             log.Error("failed to decode", "error", err)
@@ -49,7 +54,7 @@ func LogInWithJWTHandler(log *logger.Logger, user *database.UserStore) http.Hand
         }
 
         user, err := user.GetUsersByEmail(req.Email)
-        if err != nil || utils.ComparePassword(user.Password, []byte(req.Password)) {
+        if err != nil {
             http.Error(w, "Invalid email or password", http.StatusUnauthorized)
             return
         }
@@ -69,9 +74,12 @@ func LogInWithJWTHandler(log *logger.Logger, user *database.UserStore) http.Hand
             Path: "/",
         })
 
+        res := Response{
+            Message: "User logged in successfully!",
+            Token: token,
+        }
 
-        utils.Encode(w, r, http.StatusOK, req)
-        w.Write([]byte("User loged in successfully!"))
+        utils.Encode(w, r, http.StatusOK, res)
     })
 }
 

@@ -17,6 +17,7 @@ import (
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/database"
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/server/config"
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/server/logger"
+	"github.com/rs/cors"
 )
 
 /**
@@ -51,7 +52,16 @@ func NewServer(
 
     var handler http.Handler = mux
 
-    return handler
+    corsHandler := cors.New(cors.Options{
+        AllowedOrigins: []string{"http://localhost:3000"},
+        AllowedMethods: []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+        AllowedHeaders: []string{"Accept", "Content-Type", "Content-Length", "Accept-Encoding", "Authorization", "X-CSRF-Token"},
+        ExposedHeaders: []string{"Link"},
+        MaxAge: 300,
+        AllowCredentials: true,
+    }).Handler(handler)
+
+    return corsHandler
 }
 
 
