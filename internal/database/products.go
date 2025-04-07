@@ -12,7 +12,7 @@ type ProductsStore struct {
 type Products struct {
     Id int
     Title string
-    Price int
+    Price float64
     Image string
     Origin string
     Type string
@@ -35,8 +35,8 @@ func (p ProductsStore) InsertProduct(pr Products, roasterId string) error {
     return nil
 }
 
-func (p ProductsStore) GetAllProductsByRoasterID(roaster_id string) ([]*Products, error) {
-    query := `SELECT * FROM products WHERE roaster_id = $1 ORDER BY title`
+func (p ProductsStore) GetAllProductsByRoasterID(roaster_id int) ([]*Products, error) {
+    query := `SELECT id, title, price, prImg, pUrl, type, origin, method, roaster_id FROM products WHERE roaster_id = $1 ORDER BY title`
 
     rows, err := p.DB.Query(query, roaster_id)
 
@@ -169,7 +169,6 @@ func scanRowsIntoProducts(rows *sql.Rows) (*Products, error) {
         &pr.Method,
         &pr.ProductUrl,
         &pr.CreateAT,
-        &pr.UpdatedAt,
     )
 
     if err != nil {
