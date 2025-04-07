@@ -1,7 +1,9 @@
 package api
 
 import (
+	"fmt"
 	"net/http"
+	"strconv"
 
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/cmd/utils"
 	"github.com/MikelGV/SpecialtyCoffeeCrawler/cmd/web/templates"
@@ -28,9 +30,10 @@ func GetRoasterProfileHandler(log *logger.Logger, roaster *database.RoastersStor
             return
         }
 
-        roasterId := r.URL.Query().Get("roaster_id")
+        roasterId := r.URL.Query().Get("id")
+        rID, _ := strconv.Atoi(roasterId)
         
-        roaster, err := roaster.GetRoasterById(roasterId)
+        roaster, err := roaster.GetRoasterById(rID)
         if err != nil {
             log.Error("failed to fetch roaster by id", "error", err  )
             http.Error(w, "Bad Request", http.StatusBadRequest)
@@ -92,14 +95,18 @@ func GetAllRoastersHandlers(log *logger.Logger, roaster *database.RoastersStore)
 // This are temporary handlers to work with nextjs till we set up tailwind and templ
 func GetRoasterHandler(log *logger.Logger, roaster *database.RoastersStore) http.Handler {
     return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-        if r.Method != http.MethodGet {
+        if r.Method != http.MethodGet && r.Method != http.MethodOptions {
             log.Error("Failed to get proper method", "method", r.Method)
             http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
             return
         }
 
-        type req struct {
-            Id string `json:"roaster_id"`
+        roasterId := r.URL.Query().Get("id")
+        rId, err := strconv.Atoi(roasterId)
+        if err != nil {
+            log.Error("Failed to transform id into int", "error", err)
+            http.Error(w, "Interal Server Error", http.StatusInternalServerError)
+            return
         }
 
         type res struct {
@@ -112,14 +119,8 @@ func GetRoasterHandler(log *logger.Logger, roaster *database.RoastersStore) http
         }
 
 
-        reqs, err := utils.Decode[req](r)
-        if err != nil {
-            log.Error("Failed to decode payload", "error", err)
-            http.Error(w, "Bad Request", http.StatusBadRequest)
-            return
-        }
 
-        roaster, err := roaster.GetRoasterById(reqs.Id)
+        roaster, err := roaster.GetRoasterById(rId)
         if err != nil {
             log.Error("Failed to get roaster by id", "error", err)
             http.Error(w, "Interal Server Error", http.StatusInternalServerError)

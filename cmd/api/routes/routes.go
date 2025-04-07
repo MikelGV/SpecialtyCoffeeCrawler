@@ -38,6 +38,8 @@ func AddRoutes(
     mux.Handle("/roaster", middleware.AuthMiddleware(api.GetRoasterProfileHandler(log, rstStore)))
     mux.Handle("/api/roasters", api.GetAllRoastersHandlers(log, rstStore))
     mux.Handle("/api/roasters/id", api.GetRoasterHandler(log, rstStore))
+    mux.Handle("/api/products", api.GetAllProductsByRoasterID(log, productStore))
+    mux.Handle("/api/products/filters", middleware.AuthMiddleware(api.GetAllRoasterProductsByFilters(log, productStore)))
 
     /**
         This are the login, signup, and logout routes

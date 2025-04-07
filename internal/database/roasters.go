@@ -31,17 +31,17 @@ func (r RoastersStore)InsertRoaster(rst Roasters) error {
     return nil
 }
 
-func (r RoastersStore) GetRoasterById(roaster_id string) (*Roasters, error) {
+func (r RoastersStore) GetRoasterById(roaster_id int) (*Roasters, error) {
     var rst Roasters
 
-    err := r.DB.QueryRow("SELECT id, location, description, websiteUrl, contact_email FROM roasters WHERE id = $1", roaster_id).Scan(
+    err := r.DB.QueryRow("SELECT id, name, location, description, websiteUrl, contact_email FROM roasters WHERE id = $1", roaster_id).Scan(
         &rst.Id, &rst.Name, &rst.Location, &rst.Description, &rst.WebsiteUrl, &rst.ContactEmail)
 
     if err != nil {
         if err == sql.ErrNoRows {
             return nil, nil
         }
-        return nil, fmt.Errorf("error retrieving user: %w", err)
+        return nil, fmt.Errorf("error retrieving roaster: %w", err)
     }
 
     return &rst, nil
