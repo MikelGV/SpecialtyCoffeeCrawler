@@ -1,0 +1,11 @@
+package web 
+
+import "github.com/MikelGV/SpecialtyCoffeeCrawler/cmd/web/assets/layout"
+
+templ homeContent() {
+    <div>This is the home page</div>
+}
+
+templ HomePage() {
+    @layout.Base(homeContent())
+}

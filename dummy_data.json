@@ -1,0 +1,26 @@
+{
+    "roasters": [
+        {"name": "Peak Pulse Roasters", "location": "Boulder, CO", "description": "High-altitude coffee artisans", "website_url": "https://peakpulse.com", "contact_email": "info@peakpulse.com"},
+        {"name": "Emerald Brew Co.", "location": "Boulder, Co", "description": "Sustainable mountain roasters", "website_url": "https://emeraldbrew.com", "contact_email": "contact@emeraldbrew.com"},
+        {"name": "Lunar Bean Collective", "location": "Madrid, ESP", "description": "Moonlit roast innovators", "website_url": "https://lunarbean.com", "contact_email": "hello@lunarbean.com"},
+        {"name": "Solar Roast Cafe", "location": "Portland, ME", "description": "Sun-powered coffee pioneers", "websiteUrl": "https://solarroast.com", "contact_email": "support@solarroast.com"},
+        {"name": "Tidewater Roastery", "location": "Austin, TX", "description": "Coastal coffee craftsmen", "website_url": "https://tidewatercoffee.com", "contact_email": "info@tidewatercoffee.com"},
+        {"name": "Canyon Craft Coffee", "location": "Charleston, SC", "description": "Desert-inpired roasters", "website_url": "https://canyoncraft.com", "contact_email": "contact@canyoncraft.com"},
+        {"name": "Frost Peak Brewers", "location": "Vancouber, BC", "description": "Artic roast specialists", "website_url": "https://frostpeak.com", "contact_email": "brew@frostpeak.com"},
+        {"name": "Golden Slope Roasters", "location": "Amsterdam, NL", "description": "Volcanic soil coffee experts", "website_url": "https://goldenslope.com", "contact_email": "hello@goldenslope.com"},
+        {"name": "River Mist Coffee", "location": "Calgary, AB", "description": "Riverside roast masters", "website_url": "https://rivermistcoffee.com", "contact_email": "info@rivermistcoffee.com"},
+        {"name": "Horizon Blend Co.", "location": "Sydney, Aus", "description": "Southwest coffee visionaries", "website_url": "https://horizonblend.com", "contact_email": "contact@horizonblend.com"}
+    ],
+    "products": [
+        {"title": "Peak Pulse Espresso", "price": 18.50, "product_img": "peak_espresso.jpg", "origin": "Colombia", "type": "Espresso", "method": "Washed", "product_url": "https://peakpulse.com/espresso", "roaster_id": 1},
+        {"title": "Emerald Morning Blend", "price": 17.00, "product_img": "emeral_blend.jpg", "origin": "Ethiopia", "type": "Blend", "method": "Natural", "product_url": "https://emeraldbrew.com/morning", "roaster_id": 2},
+        {"title": "Lunar Light Roast", "price": 19.75, "product_img": "lunar_light.jpg", "origin": "Kenya", "type": "Light Roast", "method": "Washed", "product_url": "https://lunarbean.com/light", "roaster_id": 3},
+        {"title": "Solar Dark Roast", "price": 16.25, "product_img": "solar_dark.jpg", "origin": "Brazil", "type": "Dark Roast", "method": "Natural", "product_url": "https://solarroast.com/dark", "roaster_id": 4},
+        {"title": "Tidewater Single Origin", "price": 20.00, "product_img": "tideware_single.jpg", "origin": "Guatemala", "type": "Single Origin", "method": "Washed", "product_url": "https://tidewatercoffee.com/single", "roaster_id": 5},
+        {"title": "Canyon Espresso Blend", "price": 18.00, "product_img": "canyon_espresso.jpg", "origin": "Peru", "type": "Espresso", "method": "Natural", "product_url": "https://canyoncraft.com/espresso", "roaster_id": 6},
+        {"title": "Frost Peak Medium Roast", "price": 17.50, "product_img": "frost_medium.jpg", "origin": "Honduras", "type": "Medium Roast", "method": "Washed", "product_url": "https://frostpeak.com/medium", "roaster_id": 7},
+        {"title": "Golden Slope Blend", "price": 19.00, "product_img": "golden_blend.jpg", "origin": "Costa Rica", "type": "Blend", "method": "Natural", "product_url": "https://goldenslope.com/blend", "roaster_id": 8},
+        {"title": "River Mist Single Origin", "price": 21.50, "product_img": "river_single.jpg", "origin": "Ethiopia", "type": "Single Origin", "method": "Washed", "product_url": "https://rivermistcoffee.com/single", "roaster_id": 9},
+        {"title": "Horizon Dark Blend", "price": 16.75, "product_img": "horizon_dark.jpg", "origin": "Mexico", "type": "Dark Roast", "method": "Natural", "product_url": "https://horizonblend.com/dark", "roaster_id": 10}
+    ]
+}

@@ -1,0 +1,10 @@
+package templates
+
+import (
+    "github.com/MikelGV/SpecialtyCoffeeCrawler/cmd/web/assets/layout"
+    "github.com/MikelGV/SpecialtyCoffeeCrawler/internal/database"
+)
+
+templ RoasertProfile(roaster *database.Roasters) {
+    @layout.Base()
+}
