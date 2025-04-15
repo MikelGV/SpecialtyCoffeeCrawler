@@ -13,7 +13,6 @@ FROM debian:stable-slim
 WORKDIR /app
 
 COPY --from=builder /app/server /app/server
-COPY .env /app/.env
 
 RUN chmod +x /app/server
 
