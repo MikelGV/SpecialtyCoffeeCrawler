@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/MikelGV/SpecialtyCoffeeCrawler/internal/server/config"
 	_ "github.com/jackc/pgx/v5/stdlib"
 )
 
@@ -18,9 +19,10 @@ type DBStore struct {
     Roasters *RoastersStore
     ProductTags *ProductTagsStore
 }
-
+//`postgres://coffee:123456789@psql_db:5432/specialty_coffee`
 func Connect() (*DBStore, error) {
-    db, err := sql.Open("pgx", "postgres://coffee:123456789@localhost:5432/specialty_coffee") 
+    db, err := sql.Open("pgx", fmt.Sprintf("postgres://%s:%s@psql_db:5432/%s", 
+        config.Env.DB_Username, config.Env.DB_Password, config.Env.DB_Database)) 
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "error opening database: %s\n", err)
