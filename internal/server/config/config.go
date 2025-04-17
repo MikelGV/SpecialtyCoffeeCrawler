@@ -1,11 +1,9 @@
 package config
 
 import (
-	"fmt"
 	"os"
 	"strconv"
 
-	"github.com/joho/godotenv"
 )
 
 type Config struct {
@@ -26,11 +24,6 @@ type Config struct {
 var Env = initConfig()
 
 func initConfig() Config {
-    err := godotenv.Load()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "error loading godotenv %s\n", err)
-    }
-
     return Config{
         Host: getEnv("HOST", "localhost"),
         Port: getEnv("PORT", "3000"),
