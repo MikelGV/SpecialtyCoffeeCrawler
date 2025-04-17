@@ -53,7 +53,7 @@ func NewServer(
     var handler http.Handler = mux
 
     corsHandler := cors.New(cors.Options{
-        AllowedOrigins: []string{"http://localhost:3000"},
+        AllowedOrigins: []string{"http://roastnomads.com"},
         AllowedMethods: []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
         AllowedHeaders: []string{"Accept", "Content-Type", "Content-Length", "Accept-Encoding", "Authorization", "X-CSRF-Token"},
         ExposedHeaders: []string{"Link"},
