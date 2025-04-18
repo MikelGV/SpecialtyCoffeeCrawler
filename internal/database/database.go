@@ -21,8 +21,7 @@ type DBStore struct {
 }
 //`postgres://coffee:123456789@psql_db:5432/specialty_coffee`
 func Connect() (*DBStore, error) {
-    connStr := "postgres://" + config.Env.DB_Username + ":" +config.Env.DB_Password +"@psql_db:5432/" +config.Env.DB_Database
-    db, err := sql.Open("pgx", connStr) 
+    db, err := sql.Open("pgx", config.Env.DB_URL) 
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "error opening database: %s\n", err)
