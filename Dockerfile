@@ -13,7 +13,7 @@ FROM debian:stable-slim
 WORKDIR /app
 
 COPY --from=builder /app/server /app/server
-
+COPY dummy_data.json /app/dummy_data.json
 RUN chmod +x /app/server
 
 EXPOSE 8080

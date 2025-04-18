@@ -14,10 +14,7 @@ type Config struct {
     GCSecret string
     GScopeUrl string
     GRedirectUrl string
-    DB_Password string
-    DB_Database string
-    DB_Username string
-    DB_Port string
+    DB_URL string
 }
 
 
@@ -32,9 +29,7 @@ func initConfig() Config {
         GCSecret: getEnv("GCSECRET", "somethingSecret"),
         GScopeUrl: getEnv("GSOPEURL", "someScope"),
         GRedirectUrl: getEnv("GREDIRECTURL", "someUrl"),
-        DB_Password: getEnv("DB_PASSWORD", "123456789"),
-        DB_Username: getEnv("DB_USERNAME", "coffee"),
-        DB_Database: getEnv("DB_DATABASE", "specialty_coffee"),
+        DB_URL: getEnv("DB_URL", ""),
     }
 }
 
